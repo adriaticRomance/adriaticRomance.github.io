@@ -1,0 +1,80 @@
+.swiper-container {
+    width: 100%;
+    /* height: 250px; */
+    overflow: hidden;
+    position: relative;
+}
+.swiper-container img {
+    max-width: 100%;
+}
+.swiper-container .swiper-wrapper {
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+}
+.swiper-container .swiper-wrapper .swiper-slide {
+    float: left;
+}
+
+.swiper-pagination {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    text-align: center;
+    width: 100%;
+}
+.swiper-pagination span {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: rgba(255,255,255,0.6);
+    margin: 0 5px;
+    border-radius: 50%;
+}
+.swiper-pagination span.active {
+    background: rgba(0,0,0,0.6);
+}
+.swiper-button-prev,
+.swiper-button-next {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    /*background: rgba(0,0,0,0.4);*/
+}
+.swiper-button-next span{
+    font-size: 30px;
+    color: rgba(0,0,0,0.6);
+    cursor:default;
+}
+.swiper-button-prev span{
+    font-size: 30px;
+    color: rgba(0,0,0,0.6);
+    cursor:default;
+}
+.swiper-button-next {
+    left: auto;
+    right: 0;
+}
+@font-face {
+  font-family: 'iconfont';
+  src: url('fonts/iconfont.eot');
+  src: url('fonts/iconfont.eot?#iefix') format('embedded-opentype'),
+      url('fonts/iconfont.woff2') format('woff2'),
+      url('fonts/iconfont.woff') format('woff'),
+      url('fonts/iconfont.ttf') format('truetype'),
+      url('fonts/iconfont.svg#iconfont') format('svg');
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+h2{
+    text-indent: 45%;
+}

@@ -1,0 +1,83 @@
+html {
+  height: 100%;
+}
+html body {
+  height: 100%;
+  background: skyblue;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+html body .up {
+  width: 300px;
+  height: 300px;
+  position: relative;
+}
+html body .up .reload {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+}
+html body .up .reload span {
+  color: white;
+  cursor: pointer;
+  user-select: none;
+}
+html body .down {
+  width: 300px;
+  height: 40px;
+  margin-top: 20px;
+  position: relative;
+  outline: 1px solid gray;
+  line-height: 40px;
+  text-align: center;
+}
+html body .down .mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: pink;
+}
+html body .down .mask .slider {
+  position: relative;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  transition: background 0.3s;
+  outline: 1px solid gray;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+html body .down .mask .slider .sliderIcon {
+  font-size: 20px;
+  cursor: pointer;
+  color: white;
+}
+html body .down .mask .slider .yes {
+  color: #248024;
+  transition: all 1.2s;
+  transform: scale(1.5);
+}
+html body .down .mask .slider .no {
+  color: #e23e3e;
+  transition: all 1.2s;
+  transform: scale(1.5);
+}
+html body .down .mask .slider:hover {
+  background: #e73838;
+  color: white;
+}
+html body .down .sliderText {
+  user-select: none;
+}
+/*# sourceMappingURL=./main.css.map */

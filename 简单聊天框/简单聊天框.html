@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>聊天框</title>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		.box{
+			width: 600px;
+			height: 620px;
+			background-color: #81c7fb;
+			border-radius: 1%;
+			margin: 10px auto;
+			padding: 10px;
+		}
+		.box .wordbox{
+			width: 600px;
+			height: 450px;
+			background-color: #fefefe;
+			border-radius: 1%;
+			padding-top: 10px;
+			overflow-y: scroll;
+			overflow-x: hidden;
+			scrollbar-base-color:transparent;
+			scrollbar-darkshadow-color:transparent;
+			scrollbar-highlight-color:transparent;
+			scrollbar-face-color:transparent;
+		}
+		.box .wordinput{
+			margin: 10px 0px;
+			width: 600px;
+			height: 90px;
+		}
+		.box .wordinput textarea{
+			width: 100%;
+			height: 90px;
+			text-indent: 5px;
+			resize: none;
+			border-radius: 5px;
+			outline: 0;
+		}
+		.box .wordinput button{
+			width: 100px;
+			height: 40px;
+			border-radius: 10px;
+			border: 0;
+			float: right;
+			outline: 0px;
+		}
+		.box .wordbox .words{
+			height: 40px;
+			text-indent: 10px;
+			position: relative;
+			margin: 5px 20px 5px 0px;
+			overflow: hidden;
+		}
+		.box .wordbox .words .dubble{
+			background:#aaa;
+			padding:10px;
+			border-radius:5px;
+			float:right;
+		}
+		.box .wordbox .words .triangle{
+			display: inline-block;
+			width: 0px;
+			border: 10px solid transparent;
+			border-left: 10px solid #aaa;
+			position: absolute;
+			left: 560px;
+			top: 10px;
+		}
+		.active{
+			background:indianred;
+			color:white;
+		}
+	</style>
+</head>
+<body>
+	<div class="box" id="box">
+		<div class="wordbox" id="wordbox">
+			<!-- <div class="words" style="width: 300px">
+				<span>面向对象，首先得有一个对象</span>
+				<div class="triangle"></div>
+			</div> -->
+		</div>
+		<div class="wordinput" id="wordinput">
+			<textarea style="border:none;" id="text"></textarea>
+			<button id="button">发送(Enter)</button>
+		</div>
+	</div>
+	<script type="text/javascript">
+		//封装聊天的构造函数
+		function Chat(wordbox,text,button){
+			this.wordbox = wordbox
+			this.text = text
+			this.button = button
+
+			this.init()
+			//调用默认init方法，默认习惯都要写
+		}
+
+		//定义初始化函数  init函数
+		Chat.prototype.init = function(){
+			//给button绑定鼠标按下事件
+			var that = this;
+			this.button.onmousedown = function(e){
+			    if(that.mouseLeft(e)){
+			    	// 如果左键按下，将按钮的颜色改变
+					that.button.className = 'active'
+					// that.sendtext(e)
+			    }
+			this.onmouseup = function(){
+				that.button.className = ''
+			    if(that.mouseLeft(e)){
+			    		that.sendtext(e)
+			    	}	
+			    	// this.onmouseup = null
+			    }
+			}
+			this.chatKeyDown()
+
+		}
+
+
+		//发送消息方法
+		Chat.prototype.sendtext = function(evt){
+					var txetinput = text.value.trim()
+
+					if(txetinput.length !== 0){
+						var div = document.createElement('div')
+						var span = document.createElement('span')
+						var div2 =document.createElement('div')
+						span.innerHTML = txetinput
+						span.className = 'dubble'
+						div2.className = 'triangle'
+						div.className = 'words'
+						div.appendChild(span)
+						div.appendChild(div2)
+						wordbox.appendChild(div)
+						text.value = ''
+					}else{
+						alert('你还没输入内容呢')
+					}
+		}
+		Chat.prototype.chatKeyDown = function(){
+			var that = this
+			document.onkeydown = function(e){
+				e = e || window.event
+				console.log(e.keyCode)
+				if(e.keyCode==13){
+					e.preventDefault ? e.preventDefault() : returnValue = true;
+					that.sendtext(e)
+				}
+			}
+		}
+		//鼠标左键按下的方法 ,调用该方法判断是左键还是其他键
+		Chat.prototype.mouseLeft = function(evt){
+
+			//判断浏览器是否为低版本浏览器
+			var isIE = evt ? false : true
+			var evt = evt || window.event
+			//判断是否按下左键
+			if(evt.button == 0 || (isIE && evt.button == 1)){
+				return true
+			}else{
+				return false
+			}
+		}
+		window.onload = function(){
+			var button = document.getElementById('button')
+			var text = document.getElementById('text')
+			var wordbox = document.getElementById('wordbox')
+			var chat = new Chat(wordbox,text,button)
+			console.log(chat)
+			
+		}
+	</script>
+</body>
+</html>

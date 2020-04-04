@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+        }
+        button {
+            padding: 15px 45px;
+            font-size: 24px;
+            background: orange;
+            border: none;
+            outline: none;
+            color: white;
+            transform-origin: 50% 0;
+            margin-top: 50px;
+        }
+
+        button:hover {
+            animation-name: skew;
+            animation-duration: 1.2s;
+            animation-timing-function: linear;
+        }
+
+        @keyframes skew {
+            0% {
+                transform: skew(0deg);
+            }
+            10%{
+                transform: skew(-15deg);
+            }
+
+            30% {
+                transform: skew(10deg);
+            }
+
+            50% {
+                transform: skew(-8deg);
+            }
+
+            70% {
+                transform: skew(6deg);
+            }
+
+            90% {
+                transform: skew(-3deg);
+            }
+
+            20% {
+                transform: skew(0deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <button>
+        but
+    </button>
+</body>
+
+</html>

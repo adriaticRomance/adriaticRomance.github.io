@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>学成网</title>
+	<!-- 网页图标设置 -->
+	<link rel="shortcut icon" href="favicon.ico">
+	<style type="text/css">
+		/*样式初始化开始*/
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		/*版心类样式*/
+		.w{
+			margin: 0 auto;
+			width: 1250px;
+		}
+		/*左浮样式*/
+		.fl{
+			float: left;
+		}
+		/*右浮样式*/
+		.fr{
+			float: right;
+		}
+		/*去列表原点下划线样式*/
+		li{
+			list-style:none; 
+		}
+		/*a链接样式*/
+		a{
+			text-decoration: none;
+			color:#000000;
+		}
+		a:hover{
+			color: #00a4ff;
+		}
+		/*样式初始化结束*/
+		/*头部导航栏样式开始*/
+		.head{
+			height: 70px;
+			background-color: #f3f6f8;
+			padding-top: 30px;
+		}
+		.headwords{
+			margin-left: 94px;
+			margin-right: 59px;
+		}
+		.head ul li{
+			float: left;
+			margin-right: 26px;
+		}
+		.head ul li a{
+			padding-left: 10px;
+			padding-right: 10px;
+			padding-bottom: 12px;
+			font-size: 18px;
+
+		}
+		.head ul li:first-child a{
+			border-bottom:2px solid #00a4f9; 
+		}
+		.head .headsearch {
+			margin-right: 32px;
+		}
+		.head .headsearch input{
+			float: left;
+		}
+		.head .headsearch .headinput{
+			width: 360px;
+			height: 38px;
+			border: 1px solid #3098fc;
+			text-indent: 19px;
+			color: #ccc;
+			background:#f3f6f8; 
+		}
+		.head .headuser{
+			line-height: 30px;
+			height: 30px;
+		}
+		.head .headuser a{
+			margin-right: 37px;
+			height: 33px;
+			line-height: 33px;
+			margin-top: 6px;
+			vertical-align: middle;
+			float: left;
+		}
+		.head .headuser a img{
+			border-radius: 50%;
+			margin-right: 6px; 
+			float: left;
+		}
+		.head .headuser a .username{
+			font-size: 16px;
+		}
+		/*轮播图样式开始*/
+		.banner{
+			width: 100%;
+			height: 418px;
+			background: url(images/banner2.png) top center no-repeat #1b046b;
+			position: relative;
+		}
+		.banner .bannercantont .baleft{
+			height: 393px;
+			width: 149px;
+			float: left;
+			background-color: #150250;
+			padding-right:20px;
+			padding-left:20px;
+			padding-top: 25px;
+		}
+		.banner .bannercantont .baleft ul{
+			width: 150px;
+			height: 405px;
+		}
+		.banner .bannercantont .baleft ul li{
+			width: 150px;
+			height: 45px;
+		}
+		.banner .bannercantont .baleft ul li a{
+			color: white;
+			display: block;
+			font-size: 12px;
+			text-align: 45px;
+		}
+		.banner .bannercantont .baleft ul li a span{
+			float: right;
+		}
+		.banner .bannercantont .baleft ul li:first-child a{
+			color: #00a4f9;
+		}
+		.banner .bannercantont .baleft ul li a:hover{
+			color: #00a4f9;
+		}
+		.banner .bannercantont .bamid{
+			width: 164px;
+			height: 14px;
+			position: absolute;
+			left: 680px;
+			bottom: 34px;
+		}
+		.banner .bannercantont .bamid ul li{
+			float: left;
+			width: 14px;
+			height: 14px;
+			border-radius: 50%;
+			background: rgba(255,255,255,0.5);
+			margin-right: 15px;
+		}
+		.banner .bannercantont .bamid ul li:first-child{
+			border-radius: 10px;
+			width: 19px;
+			background: #fff;
+		}
+		.banner .bannercantont .bamid ul li:last-child{
+			margin-right: 0px;
+		}
+		.banner .bannercantont .baright{
+			height: 300px;
+			width: 228px;
+			background-color: #ffffff;
+			float: right;
+			margin-top: 50px;
+		}
+		.banner .bannercantont .baright .brtop{
+			height: 48px;
+			background-color: #9acfea;
+			text-align: center;
+			line-height: 48px;
+		}
+		.banner .bannercantont .baright .brtop h2{
+			color: #ffffff;
+		}
+		.banner .bannercantont .brmid {
+			height: 185px;
+			width: 192px;
+			margin-right: 18px;
+			margin-left: 18px;
+		}
+		.banner .bannercantont .brmid .brmidcont{
+			width: 185px;
+			height: 50px;
+			border-bottom: 1px solid #ebebeb;
+		}
+		.banner .bannercantont .brmid .brmidcont:last-child{
+			border-bottom: 0px;
+		}
+		.banner .bannercantont .brmid .brmidcont {
+			margin-top: 15px;
+		}
+		.banner .bannercantont .brmid .brmidcont:last-child {
+			color: #01a0ff;
+		}
+		.banner .bannercantont .brmid .brmidcont:last-child a{
+			color: #01a0ff;
+		}
+		.banner .bannercantont .brmid .brmidcont a{
+			font-size: 12px;
+			color: #aeaeae;
+		}
+		.banner .bannercantont .brbutt{
+			width: 198px;
+			height: 39px;
+			border: 1px solid #01a0ff;
+			text-align: center;
+			line-height: 39px;
+			margin-left: 14px;
+			color: #01a0ff;
+		}
+		/*轮播图样式结束*/
+		/*分类栏样式开始*/
+		.midclssf{
+			width: 100%;
+			height: 90px;
+			background-color:#f3f6f8;
+			position: relative;
+		}
+		.midclssf .midclssfbox{
+			height: 60px;
+			background-color:#ffffff;
+			position: absolute;
+			top: 10px;
+			left: 143px;
+			box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+		}
+		.midclssf .midclssfbox ul li{
+			float: left;
+			text-align: center;
+			line-height: 60px;
+		}
+		.midclssf .midclssfbox ul li h3{
+			padding: 0 34px;
+			color: #00acf8;
+		}
+		.midclssf .midclssfbox ul li a{
+			height: 20px;
+			width: 119px;
+			font-size: 16px;
+			padding: 0 34px;
+			border-right: 1px solid #c0c0c0;
+		}
+		.midclssf .midclssfbox ul li:nth-child(2) a{
+			border-left: 1px solid #c0c0c0;
+		}
+		.midclssf .midclssfbox span{
+			float: right;
+			text-align: center;
+			line-height: 60px;
+			font-size: 12px;
+			margin-right: 25px;
+		}
+		.midclssf .midclssfbox span a{
+			color: #16a4e9;
+		}
+		/*分类栏样式结束*/
+		/*精品推荐样式开始*/
+		.sujpart{
+			width: 100%;
+			height: 593px;
+			background-color: #f3f6f8;
+		}
+		.sujpart .sujpart-box .sujpart-top{
+			height: 50px;
+			line-height: 50px;
+		}
+		.sujpart .sujpart-box .sujpart-top h2{
+			font-weight: normal;
+			font-size: 20px;
+			color: #41446c;
+		}
+		.sujpart .sujpart-box .sujpart-top a{
+			float: right;
+			color: #b5b8b8;
+			font-size: 12px;
+		}
+		.sujpart .sujpart-box .sujpart-top a:hover{
+			color: #00a8fe;
+			font-size: 12px;
+		}
+		.sujpart .sujpart-box .sujpart-buttom{
+			height: 280px;
+			width: 1260px;
+		}
+		.sujpart .sujpart-box .sujpart-buttom .sujpart-contantbox{
+			height: 263px;
+			width: 228px;
+			float: left;
+			margin-right: 30px;
+			background-color: #ffffff;
+			box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+		}
+		.sujpart .sujpart-box .sujpart-buttom .sujpart-contantbox:last-child{
+			margin-right: 0px;
+		}
+		.sujpart .sujpart-box .sujpart-buttom .sujpart-contantbox .sujpart-contantbox-top img:first-child{
+			width: 228px;
+			height: 151px;
+		}
+		.sujpart .sujpart-box .sujpart-buttom .sujpart-contantbox .sujpart-contantbox-top:nth-child(1){
+			position: relative;
+		}
+		.sujpart .sujpart-box .sujpart-buttom .sujpart-contantbox .sujpart-contantbox-top:nth-child(2){
+			position: relative;
+		}
+		.sujpart .sujpart-box .sujpart-buttom .sujpart-contantbox .sujpart-contantbox-top .hotpc{
+			position: absolute;
+			top: 5px;
+			right: -5px;
+		}
+		.sujpart .sujpart-box .sujpart-buttom .sujpart-contantbox .sujpart-contantbox-top .newpc{
+			position: absolute;
+			top: 5px;
+			right: -5px;
+		}
+		.sujpart .sujpart-box .sujpart-buttom .sujpart-contantbox .sujpart-contantbox-mid{
+			width: 228px;
+			height: 60px;
+			padding: 15px 10px 1px 14px;
+		}
+		.sujpart .sujpart-box .sujpart-buttom .sujpart-contantbox .sujpart-contantbox-mid a p{
+			font-size: 14px;
+			height: 56px;
+			width: 184px;
+		}
+		.sujpart .sujpart-box .sujpart-buttom .sujpart-contantbox .sujpart-contantbox-but{
+			font-size: 12px;
+			padding: 0px 10px;
+			color: #9f9f9f;
+		}
+		.sujpart .sujpart-box .sujpart-buttom .sujpart-contantbox .sujpart-contantbox-but span{
+			color: #fa8b46;
+			margin-right: 3px;
+		}
+		/*精品推荐样式结束*/
+		/*编程入门样式开始*/
+		.pinpart{
+			height: 480px;
+			background-color: #f3f6f8;
+		}
+		.pinpart .pinpart-box .pinpart-box-top{
+			/*vertical-align: bottom;*/
+			height: 75px;
+			line-height: 60px;
+		}
+		.pinpart .pinpart-box .pinpart-box-top ul{
+			margin-left: 445px;
+		}
+		.pinpart .pinpart-box .pinpart-box-top ul li{
+			float: left;
+			margin-right: 80px;
+		}
+		.pinpart .pinpart-box .pinpart-box-top ul li a{
+			font-size: 16px;
+			color: #7e8181;
+		}
+		.pinpart .pinpart-box .pinpart-box-top ul li:first-child a{
+			color: #0fa1f1;
+		}
+		.pinpart .pinpart-box .pinpart-box-top ul li a:hover{
+			color: #0fa1f1;
+		}
+		.pinpart .pinpart-box .pinpart-box-top span:first-child{
+			float: left;
+			font-size: 20px;
+			color: #414444;
+		}
+		.pinpart .pinpart-box .pinpart-box-top span:last-child{
+			float: right;
+		}
+		.pinpart .pinpart-box .pinpart-box-top span:last-child a{
+			font-size: 12px;
+			color: #b5b8b8;
+		}
+		.pinpart .pinpart-box .pinpart-box-top span:last-child a:hover{
+			color: #0fa1f1;
+		}
+		.pinpart .pinpart-box .pinpart-box-buttom .pinpart-box-buttom-left{
+			width: 192px;
+			height: 346px;
+			background: url(images/php1.png);
+			padding-left: 36px;
+			padding-top: 46px;
+			float: left;
+		}
+		.pinpart .pinpart-box .pinpart-box-buttom .pinpart-box-buttom-left h2{
+			font-size: 18px;
+			color: #ffffff;
+			line-height: 38px;
+			margin-bottom: 43px;
+		}
+		.pinpart .pinpart-box .pinpart-box-buttom .pinpart-box-buttom-left ul{
+			background: url(images/moreRadius.png) no-repeat 4px 8px;
+		}
+		.pinpart .pinpart-box .pinpart-box-buttom .pinpart-box-buttom-left ul li{
+			background: url(images/radius.png) no-repeat left center;
+			margin-bottom: 53px;
+			font-size: 14px;
+			padding-left: 16px;
+			color: #ffffff;
+		}
+		.pinpart .pinpart-box .pinpart-box-buttom .pinpart-box-buttom-right{
+			float: right;
+			width: 1005px;
+		}
+		.pinpart .pinpart-box .pinpart-box-buttom .pinpart-box-buttom-right .pinpart-box-buttom-right-top a img{
+			width: 1015px;
+			height: 100px;
+		}
+		.pinpart .pinpart-box .pinpart-box-buttom .pinpart-box-buttom-right .pinpart-box-buttom-right-buttom{
+			width: 1015px;
+			margin-top: 10px;
+		}
+		.pinpart .pinpart-box .pinpart-box-buttom .pinpart-box-buttom-right .pinpart-box-buttom-right-buttom ul li{
+			float: left;
+			box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+			width: 228px;
+			margin-right: 33px;
+			height: 270px;
+		}
+		.pinpart .pinpart-box .pinpart-box-buttom .pinpart-box-buttom-right .pinpart-box-buttom-right-buttom ul li .pro-img img{
+			width: 228px;
+		}
+		.pinpart .pinpart-box .pinpart-box-buttom .pinpart-box-buttom-right .pinpart-box-buttom-right-buttom ul li:last-child{
+			margin-right: 0px;
+		}
+		.pinpart .pinpart-box .pinpart-box-buttom .pinpart-box-buttom-right .pinpart-box-buttom-right-buttom ul li .pro-cont {
+			width: 184px;
+			padding: 25px 20px 25px 24px;
+			background-color: #ffffff;
+		}
+		.pinpart .pinpart-box .pinpart-box-buttom .pinpart-box-buttom-right .pinpart-box-buttom-right-buttom ul li .pro-cont p:first-child{
+			font-size: 14px;
+			height: 56px;
+		}
+		.pinpart .pinpart-box .pinpart-box-buttom .pinpart-box-buttom-right .pinpart-box-buttom-right-buttom ul li .pro-cont p:last-child{
+			font-size: 12px;
+			color: #ab9fb8;
+		}
+		.pinpart .pinpart-box .pinpart-box-buttom .pinpart-box-buttom-right .pinpart-box-buttom-right-buttom ul li .pro-cont p:last-child span{
+			color: #fa8b46;
+			margin-right: 3px;
+		}
+		/*编程入门样式结束*/
+		/*机器学习工程师部分样式开始*/
+		.robleand{
+			height: 315px;
+			width: 100%;
+			background-color: #f3f6f8;
+			padding-top: 40px;
+		}
+		.robleand .robleand-top{
+			height: 20px;
+		}
+		.robleand .robleand-top span:first-child{
+			float: left;
+			font-size: 20px;
+			color: #414444;
+		}
+		.robleand .robleand-top span:last-child{
+			float: right;
+			font-size: 12px;
+		}
+		.robleand .robleand-top span:last-child a{
+			color: #b5b8b8;
+		}
+		.robleand .robleand-top span:last-child a:hover{
+			color: #0fa1f1;
+		}
+		.robleand .robleand-top ul{
+			margin-left: 510px;
+		}
+		.robleand .robleand-top ul li{
+			float: left;
+			margin-right: 71px;
+		}
+		.robleand .robleand-top ul li a{
+			color: #7e8181;
+		}
+		.robleand .robleand-top ul li a:hover{
+			color: #0fa1f1;
+		}
+		.robleand .robleand-top ul li:first-child a{
+			color: #0fa1f1;
+		}
+		.robleand .robleand-cont{
+			height: 270px;
+			padding-top: 25px; 
+		}
+		.robleand .robleand-cont ul li{
+			width: 228px;
+			height: 270px;
+			float: left;
+			margin-right: 27px;
+			box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+			background-color: #ffffff;
+		}
+		.robleand .robleand-cont ul li .rob-top img{
+			width: 100%;
+		}
+		.robleand .robleand-cont ul li:last-child{
+			margin-right: 0px;
+		}
+		.robleand .robleand-cont ul li .rob-but{
+			padding: 25px 20px 25px 24px;
+		}
+		.robleand .robleand-cont ul li .rob-but p:first-child{
+			font-size: 14px;
+			height: 56px;
+		}
+		.robleand .robleand-cont ul li .rob-but p:last-child{
+			font-size: 12px;
+			color: #9f9f9f;
+		}
+		.robleand .robleand-cont ul li .rob-but p:last-child span{
+			font-size: 12px;
+			color: #fa8b46;
+		}
+		/*机器学习工程师部分样式结束*/
+		/*底部栏样式开始*/
+		.buttomboxbig{
+			height: 233px;
+		}
+		.buttomboxbig .butt-left{
+			width: 505px;
+			padding-left: 20px;
+			padding-top: 40px;
+		}
+		.buttomboxbig .butt-left p{
+			margin-top: 25px;
+			margin-bottom: 25px;
+			font-size: 14px;
+		}
+		.buttomboxbig .butt-left .bottdow{
+			display: block;
+			font-size: 16px;
+			width: 118px;
+			height: 34px;
+			border: 1px solid #03a5ff;
+			text-align: center;
+			line-height: 34px;
+			color: #0fa7ff;
+		}
+		.buttomboxbig .butt-left .bottdow:hover{
+			background-color: #03a5ff;
+			color: #ffffff;
+		}
+		.buttomboxbig .butt-right{
+			height: 142px;
+			width: 590px;
+			padding-top: 40px;
+		}
+		.buttomboxbig .butt-right ul{
+			width: 196px;
+			float: left;
+		}
+		.buttomboxbig .butt-right ul li a{
+			color: #2b2b2b;
+			font-size: 13px;
+		}
+		.buttomboxbig .butt-right .ul-one{
+			margin-bottom: 13px;
+			color: #000000;
+		}
+		.buttomboxbig .butt-right .ul-two{
+			margin-bottom: 13px;
+			color: #000000;
+		}
+		.buttomboxbig .butt-right .ul-three{
+			margin-bottom: 13px;
+			color: #000000;
+		}
+		/*底部栏样式结束*/
+	</style>
+</head>
+<body>
+	<!-- 头部导航栏开始 -->
+	<div class="head">
+		<div class="headnav w">
+			<!-- 头部logo -->
+			<div class="headlogo fl"><img src="images/logo.png"></div>
+			<!-- 头部文字 -->
+			<div class="headwords fl">
+				<ul>
+					<li><a href="#">首页</a></li>
+					<li><a href="#">课程</a></li>
+					<li><a href="#">职业规划</a></li>
+				</ul>
+			</div>
+			<!-- 头部搜索框 -->
+			<div class="headsearch fl">
+					<input type="text" placeholder="输入关键词" class="headinput">
+					<input type="image" src="images/btn.png" class="headpickture">
+			</div>
+			<!-- 头部用户部分 -->
+			<div class="headuser fl">
+				<a href="#">
+					<img src="images/user.png" class="userimg">
+					<span class="username">qq-leishui</span>
+				</a>	
+			</div>
+		</div>
+	</div>
+	<!-- 头部导航栏结束 -->
+	<!-- 中部轮播图开始 -->
+	<div class="banner">
+		<div class="bannercantont w">
+			<div class="baleft">
+				<ul>
+					<li><a href="#">前端开发<span>></span></a></li>
+					<li><a href="#">后端开发<span>></span></a></li>
+					<li><a href="#">移动开发<span>></span></a></li>
+					<li><a href="#">人工智能<span>></span></a></li>
+					<li><a href="#">商业预测<span>></span></a></li>
+					<li><a href="#">云计算&大数据<span>></span></a></li>
+					<li><a href="#">运维&从测试<span>></span></a></li>
+					<li><a href="#">UI设计<span>></span></a></li>
+					<li><a href="#">产品<span>></span></a></li>
+				</ul>
+			</div>
+			<div class="bamid">
+				<ul>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
+			<div class="baright">
+				<div class="brtop"><h2>我的课程表</h2></div>
+				<div class="brmid">
+					<div class="brmidcont"><p>继续学习-程序语言设计</p>
+					<a href="#">正在学习-使用对象</a></div>
+					<div class="brmidcont"><p>继续学习-程序语言设计</p>
+					<a href="#">正在学习-使用对象</a></div>
+					<div class="brmidcont"><p>继续学习-程序语言设计</p>
+					<a href="#">正在学习-使用对象</a></div>
+				</div>
+				<div class="brbutt">全部课程</div>
+			</div>
+		</div>
+	</div>
+	<!-- 中部轮播图结束 -->
+	<!-- 中部分类栏开始 -->
+	<div class="midclssf">
+		<div class="midclssfbox w">
+			<ul>
+				<li><h3>精品推荐</h3></li>
+				<li><a href="#">Jquery</a></li>
+				<li><a href="#">Spark</a></li>
+				<li><a href="#">MySQL</a></li>
+				<li><a href="#">JavaWeb</a></li>
+				<li><a href="#">Mysql</a></li>
+				<li><a href="#">JavaWeb</a></li>
+			</ul>
+			<span><a href="#">修改兴趣</a></span>
+		</div>
+	</div>
+	<!-- 中部分类栏结束 -->
+	<!-- 精品推荐部分开始 -->
+	<div class="sujpart">
+		<div class="sujpart-box w">
+			<div class="sujpart-top">
+				<a href="#">查看全部</a>
+				<h2>精品推荐</h2>
+			</div>
+			<div class="sujpart-buttom">
+				<div class="sujpart-contantbox">
+					<a href="#">
+						<div class="sujpart-contantbox-top"><img src="images/pro1.png"><img src="images/hot.png" class="hotpc"></div>
+						<div class="sujpart-contantbox-mid"><a href="#"><p>Think PHP 5.0 博客系统实战项目演练</p></a></div>
+						<div class="sujpart-contantbox-but"><span>高级</span>•  1125人在学习	</div>
+					</a>
+				</div>
+				<div class="sujpart-contantbox">
+					<a href="#">
+						<div class="sujpart-contantbox-top"><img src="images/pro2.png"><img src="images/new.png" class="newpc"></div>
+						<div class="sujpart-contantbox-mid"><a href="#"><p>Android 网络图片加载框架详解</p></a></div>
+						<div class="sujpart-contantbox-but"><span>高级</span>•  1125人在学习	</div>
+					</a>
+				</div>
+				<div class="sujpart-contantbox">
+					<a href="#">
+						<div class="sujpart-contantbox-top"><img src="images/pro3.png"></div>
+						<div class="sujpart-contantbox-mid"><a href="#"><p>Angular 2 最新框架+主流技术+项目实战</p></a>	</div>
+						<div class="sujpart-contantbox-but"><span>高级</span>•  1125人在学习	</div>
+					</a>
+				</div>
+				<div class="sujpart-contantbox">
+					<a href="#">
+						<div class="sujpart-contantbox-top"><img src="images/pro4.png"></div>
+						<div class="sujpart-contantbox-mid"><a href="#"><p>Android Hybrid APP开发实战 H5+原生！</p></a></div>
+						<div class="sujpart-contantbox-but"><span>高级</span>•  1125人在学习	</div>
+					</a>
+				</div>
+				<div class="sujpart-contantbox">
+					<a href="#">
+						<div class="sujpart-contantbox-top"><img src="images/pro4.png"></div>
+						<div class="sujpart-contantbox-mid"><a href="#"><p>Android Hybrid APP开发实战 H5+原生！</p></a></div>
+						<div class="sujpart-contantbox-but"><span>高级</span>•  1125人在学习	</div>
+					</a>
+				</div>
+			</div>
+			<div class="sujpart-buttom">
+				<div class="sujpart-contantbox">
+					<a href="#">
+						<div class="sujpart-contantbox-top"><img src="images/pro1.png"><img src="images/hot.png" class="hotpc"></div>
+						<div class="sujpart-contantbox-mid"><a href="#"><p>Think PHP 5.0 博客系统实战项目演练</p></a></div>
+						<div class="sujpart-contantbox-but"><span>高级</span>•  1125人在学习	</div>
+					</a>
+				</div>
+				<div class="sujpart-contantbox">
+					<a href="#">
+						<div class="sujpart-contantbox-top"><img src="images/pro2.png"><img src="images/new.png" class="newpc"></div>
+						<div class="sujpart-contantbox-mid"><a href="#"><p>Android 网络图片加载框架详解</p></a></div>
+						<div class="sujpart-contantbox-but"><span>高级</span>•  1125人在学习	</div>
+					</a>
+				</div>
+				<div class="sujpart-contantbox">
+					<a href="#">
+						<div class="sujpart-contantbox-top"><img src="images/pro3.png"></div>
+						<div class="sujpart-contantbox-mid"><a href="#"><p>Angular 2 最新框架+主流技术+项目实战</p></a>	</div>
+						<div class="sujpart-contantbox-but"><span>高级</span>•  1125人在学习	</div>
+					</a>
+				</div>
+				<div class="sujpart-contantbox">
+					<a href="#">
+						<div class="sujpart-contantbox-top"><img src="images/pro4.png"></div>
+						<div class="sujpart-contantbox-mid"><a href="#"><p>Android Hybrid APP开发实战 H5+原生！</p></a></div>
+						<div class="sujpart-contantbox-but"><span>高级</span>•  1125人在学习	</div>
+					</a>
+				</div>
+				<div class="sujpart-contantbox">
+					<a href="#">
+						<div class="sujpart-contantbox-top"><img src="images/pro4.png"></div>
+						<div class="sujpart-contantbox-mid"><a href="#"><p>Android Hybrid APP开发实战 H5+原生！</p></a></div>
+						<div class="sujpart-contantbox-but"><span>高级</span>•  1125人在学习	</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 精品推荐部分结束 -->
+	<!-- 编程入门部分开始 -->
+	<div class="pinpart">
+		<div class="pinpart-box w">
+			<div class="pinpart-box-top">
+				<span>编程入门</span>
+				<ul>
+					<li><a href="#">热门</a></li>
+					<li><a href="#">初级</a></li>
+					<li><a href="#">中级</a></li>
+					<li><a href="#">高级</a></li>
+				</ul>
+				<span><a href="#">查看全部</a></span>
+			</div>
+			<div class="pinpart-box-buttom">
+				<div class="pinpart-box-buttom-left">
+					<h2>PHP入门：<br>基础语法到实际运用</h2>
+					<ul>
+						<li>零基础入门：语法与界</li>
+						<li>进阶：网络与数据缓存</li>
+						<li>界面到数据存储</li>
+					</ul>
+				</div>
+				<div class="pinpart-box-buttom-right">
+					<div class="pinpart-box-buttom-right-top">
+						<a href="#"><img src="images/pyhton1.png"></a>
+					</div>
+					<div class="pinpart-box-buttom-right-buttom">
+						<ul>
+							<li>
+								<a href="#">
+									<div class="pro-img">
+										<img src="images/pro8.png">
+									</div>
+									<div class="pro-cont">
+										<p>Android Hybrid APP开发实战 H5+原生！</p>
+										<p><span>高级</span>•  11250人在学习</p>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<div class="pro-img">
+										<img src="images/pro9.png">
+									</div>
+									<div class="pro-cont">
+										<p>Kami2首页界面切换效果</p>
+										<p><span>高级</span>•  11250人在学习</p>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<div class="pro-img">
+										<img src="images/pro7.png">
+									</div>
+									<div class="pro-cont">
+										<p>Unity Profiler入门</p>
+										<p><span>高级</span>•  11250人在学习</p>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<div class="pro-img">
+										<img src="images/pro6.png">
+									</div>
+									<div class="pro-cont">
+										<p>Cocos2d-x 引擎源码中的纹理优化</p>
+										<p><span>高级</span>•  11250人在学习</p>
+									</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 编程入门第二部分开始 -->
+	<div class="pinpart">
+		<div class="pinpart-box w">
+			<div class="pinpart-box-top">
+				<span>编程入门</span>
+				<ul>
+					<li><a href="#">热门</a></li>
+					<li><a href="#">初级</a></li>
+					<li><a href="#">中级</a></li>
+					<li><a href="#">高级</a></li>
+				</ul>
+				<span><a href="#">查看全部</a></span>
+			</div>
+			<div class="pinpart-box-buttom">
+				<div class="pinpart-box-buttom-left"  style="background: url(images/php2.png);">
+					<h2>PHP入门：<br>基础语法到实际运用</h2>
+					<ul>
+						<li>零基础入门：语法与界</li>
+						<li>进阶：网络与数据缓存</li>
+						<li>界面到数据存储</li>
+					</ul>
+				</div>
+				<div class="pinpart-box-buttom-right">
+					<div class="pinpart-box-buttom-right-top">
+						<a href="#"><img src="images/python2.png"></a>
+					</div>
+					<div class="pinpart-box-buttom-right-buttom">
+						<ul>
+							<li>
+								<a href="#">
+									<div class="pro-img">
+										<img src="images/pro9.png">
+									</div>
+									<div class="pro-cont">
+										<p>Kami2首页界面切换效果</p>
+										<p><span>高级</span>•  11250人在学习</p>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<div class="pro-img">
+										<img src="images/pro8.png">
+									</div>
+									<div class="pro-cont">
+										<p>Android Hybrid APP开发实战 H5+原生！</p>
+										<p><span>高级</span>•  11250人在学习</p>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<div class="pro-img">
+										<img src="images/pro6.png">
+									</div>
+									<div class="pro-cont">
+										<p>UCocos2d-x 引擎源码中的纹理优化</p>
+										<p><span>高级</span>•  11250人在学习</p>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<div class="pro-img">
+										<img src="images/pro7.png">
+									</div>
+									<div class="pro-cont">
+										<p>Unity Profiler入门</p>
+										<p><span>高级</span>•  11250人在学习</p>
+									</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 编程入门第二部分结束 -->
+	<!-- 编程入门部分结束 -->
+	<!-- 机器学习工程师部分开始 -->
+	<div class="robleand">
+		<div class="w">
+			<div class="robleand-top">
+				<span>机器学习工程师</span>
+				<ul>
+					<li><a href="#">热门</a></li>
+					<li><a href="#">初级</a></li>
+					<li><a href="#">中级</a></li>
+					<li><a href="#">高级</a></li>
+				</ul>
+				<span><a href="#">查看全部</a></span>
+			</div>
+			<div class="robleand-cont">
+				<ul>
+					<li>
+						<a href="#">
+							<div class="rob-top">
+								<img src="images/pro8.png">
+							</div>
+							<div class="rob-but">
+								<p>Android Hybrid APP开发实战 H5+原生！</p>
+								<p><span>初级</span>  •  125人在学习</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="rob-top">
+								<img src="images/pro6.png">
+							</div>
+							<div class="rob-but">
+								<p>ACocos2d-x 引擎源码中的纹理优化</p>
+								<p><span>高级</span>  •  11250人在学习</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="rob-top">
+								<img src="images/pro7.png">
+							</div>
+							<div class="rob-but">
+								<p>Unity Profiler入门</p>
+								<p><span>中级</span>  •  178人在学习</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="rob-top">
+								<img src="images/pro5.png">
+							</div>
+							<div class="rob-but">
+								<p>微软人工智能-数分析平台</p>
+								<p><span>高级</span>  •  11250人在学习</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="rob-top">
+								<img src="images/pro9.png">
+							</div>
+							<div class="rob-but">
+								<p>Kami2首页界面切换效果</p>
+								<p><span>高级</span>  •  11250人在学习</p>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="robleand" style="height: 360px;">
+		<div class="w">
+			<div class="robleand-top">
+				<span>机器学习工程师</span>
+				<ul>
+					<li><a href="#">热门</a></li>
+					<li><a href="#">初级</a></li>
+					<li><a href="#">中级</a></li>
+					<li><a href="#">高级</a></li>
+				</ul>
+				<span><a href="#">查看全部</a></span>
+			</div>
+			<div class="robleand-cont">
+				<ul>
+					<li>
+						<a href="#">
+							<div class="rob-top">
+								<img src="images/pro5.png">
+							</div>
+							<div class="rob-but">
+								<p>微软人工智能-数分析平台</p>
+								<p><span>高级</span>  •  11250人在学习</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="rob-top">
+								<img src="images/pro7.png">
+							</div>
+							<div class="rob-but">
+								<p>Unity Profiler入门</p>
+								<p><span>中级</span>  •  178人在学习</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="rob-top">
+								<img src="images/pro6.png">
+							</div>
+							<div class="rob-but">
+								<p>Cocos2d-x 引擎源码中的纹理优化</p>
+								<p><span>高级</span> •  11250人在学习</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="rob-top">
+								<img src="images/pro9.png">
+							</div>
+							<div class="rob-but">
+								<p>Kami2首页界面切换效果</p>
+								<p><span>高级</span>  •  11250人在学习</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="rob-top">
+								<img src="images/pro8.png">
+							</div>
+							<div class="rob-but">
+								<p>Android Hybrid APP开发实战 H5+原生！</p>
+								<p><span>初级</span>  •  125人在学习</p>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- 机器学习工程师部分结束 -->
+	<!-- 底部栏开始 -->
+	<div class="buttomboxbig">
+		<div class="w">
+			<div class="butt-left fl">
+				<a href="#"><img src="images/logo.png"></a>
+				<p>学成在线致力于普及中国最好的教育它与中国一流大学和机构合作提供在线课程。 © 2017年XTCG Inc.保留所有权利。-沪ICP备15025210号</p>
+				<a href="#" class="bottdow">下载APP</a>
+			</div>
+			<div class="butt-right fr">
+				<ul>
+					<li class="ul-one">关于学成网</li>
+					<li><a href="#">关于</a></li>
+					<li><a href="#">管理团队</a></li>
+					<li><a href="#">工作机会</a></li>
+					<li><a href="#">客户服务</a></li>
+					<li><a href="#">帮助</a></li>
+				</ul>
+				<ul>
+					<li class="ul-two">新手指南</li>
+					<li><a href="#">如何注册</a></li>
+					<li><a href="#">如何选课</a></li>
+					<li><a href="#">如何拿到毕业证</a></li>
+					<li><a href="#">学分是什么</a></li>
+					<li><a href="#">考试未通过怎么办</a></li>
+				</ul>
+				<ul>
+					<li class="ul-three">合作伙伴</li>
+					<li><a href="#">合作机构</a></li>
+					<li><a href="#">合作导师</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- 底部栏结束 -->
+</body>
+</html>

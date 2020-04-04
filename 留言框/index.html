@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>留言框</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box{
+			margin: 30px auto;
+			width: 1200px;
+			position: relative;
+		}
+		.box .title{
+			height: 50px;
+			width: 100%;
+		}
+		.box .title span:first-child{
+			float: left;
+			font-size: 16px;
+			font-weight: 700;
+		}
+		.box .title span:last-child{
+			float: right;
+			font-size: 16px;
+			font-weight: 700;
+		}
+		.box .input{
+			width: 100%;
+			height: 400px;
+			position: relative;
+		}
+		.box .input textarea{
+			width: 100%;
+			height: 100%;
+			text-indent: 5px;
+			outline: 0;
+			resize: none;
+			border-radius: 3px;
+			font-size: 20px;
+		}
+		.box .input .Lword{
+			position: absolute;
+			top: 360px;
+			right: 30px;
+			color: #666;
+		}
+		.box button{
+			margin-left: 1080px;
+			margin-top: 10px;
+			width: 120px;
+			height: 60px;
+			margin-top: 10px;
+		}
+		.box .word{
+			width: 100%;
+			height: 120px;
+			border: 1px solid black;
+			border-radius: 3px;
+			line-height: 120px;
+			position: relative;
+			margin-top: 20px;
+		}
+		.box .word .img img{
+			width: 60px;
+			height: 60px;
+			border-radius: 50%;
+			overflow: hidden;
+			position: absolute;
+			top: 30px;
+			left: 10px;
+		}
+		.box .word .img img{
+			width: 60px;
+			height: 60px;
+		}
+		.box .word span{
+			position: absolute;
+			left: 100px;
+		}
+		.box .word button{
+			position: absolute;
+			right: 20px;
+			top: 50px;
+			height: 40px;
+			width: 80px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box" id="box">
+		<div class="title">
+			<span>你想对楼主说点什么</span>
+			<span>你最多可以输入30个字</span>
+		</div>
+		<div class="input">
+			<textarea id="textarea"></textarea>
+			<div class="Lword" id="Lword">
+				已输入0/30还,可以输入30字
+			</div>
+		</div>
+		<button id="input">发表</button>
+		<!-- <div class="word">
+			<div class="img"><img src="img/head.JPG"></div>
+			<span id="showWord">77777</span>
+			<button id="dele">删除</button>
+		</div> -->
+	</div>
+	<script type="text/javascript">
+		function Tall(button,text,Lword,showWord){
+			this.button = button
+			this.text = text
+			this.Lword = Lword
+			this.showWord = showWord
+			this.init()	
+		}
+		Tall.prototype.init = function(){
+			var that = this;
+			this.button.onclick = function(e){
+				that.sendText(e)
+			}
+			this.text.onkeypress = function(e){
+				that.checkWord(e)
+			}
+		}
+		Tall.prototype.checkWord = function(e){			
+			this.Lword.innerHTML = '已输入'+this.text.value.length+'/30'+','+'还可输入'+(30-(this.text.value.length))+'字'
+			if(this.text.value.length>30){
+				alert('超过字数限制啦！')
+				this.text.value = ''
+				this.text.value.length = 0
+			}
+			
+		}
+		Tall.prototype.sendText = function(evt){
+			var tv = this.text.value
+				if(tv == '' ){
+				alert('你还没写回复哦')
+				}else{	
+				var div = document.createElement('div')
+				var div2 = document.createElement('div')
+				var img = document.createElement('img')
+				var span = document.createElement('span')
+				var button = document.createElement('button')
+				var box = document.getElementById('box')
+				div.className = 'word'
+				div2.className = 'img'
+				img.src = 'img/head.JPG'
+				span.id = 'showWord'
+				span.innerHTML = tv
+				button.id = 'dele'
+				button.innerHTML = '删除留言'
+				button.onclick = function(){
+					box.removeChild(div)
+				}
+				div.appendChild(div2)
+				div.appendChild(span)
+				div.appendChild(button)
+				div2.appendChild(img)
+				box.appendChild(div)
+				this.text.value = ''
+				}	
+		}
+		window.onload = function(){
+			var button = document.getElementById('input')
+			var text = document.getElementById('textarea')
+			var Lword = document.getElementById('Lword')
+			var showWord = document.getElementById('showWord')
+			var tall = new Tall(button,text,Lword,showWord)
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.js"></script>
+    <style>
+        @font-face {
+            font-family: 'iconfont';
+            src: url('fonts/iconfont.eot');
+            src: url('fonts/iconfont.eot?#iefix') format('embedded-opentype'),
+                url('fonts/iconfont.woff2') format('woff2'),
+                url('fonts/iconfont.woff') format('woff'),
+                url('fonts/iconfont.ttf') format('truetype'),
+                url('fonts/iconfont.svg#iconfont') format('svg');
+        }
+
+        .iconfont {
+            font-family: "iconfont" !important;
+            font-size: 16px;
+            font-style: normal;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="up">
+            <canvas id="canvasP" width="300px" height="300px"></canvas>
+            <div class="reload"><span class="iconfont">&#xe65e;</span></div>
+        </div>
+        <div class="down">
+            <div class="mask" style="width: 40px;">
+                <div class="slider" style="left: 0px;">
+                    <span class="iconfont sliderIcon">&#xe631;</span>
+                </div>
+            </div>
+            <span class="sliderText">向右滑动旋转图片进行验证</span>
+            <p class="infor" style="display: none;">验证成功！</p>
+        </div>
+        <img src="img/1.png" alt="" id="pic" style="display: none;">
+    </div>
+</body>
+<script src="main.js"></script>
+
+</html>

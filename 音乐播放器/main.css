@@ -1,0 +1,155 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+body .stage {
+  width: 500px;
+}
+body .stage .list {
+  margin: 10px auto;
+  padding: 10px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  background: #191919;
+}
+body .stage .list li {
+  color: white;
+  list-style: none;
+}
+body .stage .list li div {
+  width: 20px;
+  height: 20px;
+  background: #393939;
+  border-radius: 5px;
+  display: flex;
+  opacity: 0;
+  align-items: flex-end;
+  justify-content: space-around;
+  padding: 5px;
+}
+body .stage .list li div span {
+  content: "";
+  display: block;
+  width: 4px;
+  height: 10px;
+  background: white;
+  animation-name: move;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(1, 0.17, 0.52, 1.49);
+}
+body .stage .list li div span:nth-of-type(1) {
+  animation-duration: 0.7s;
+}
+body .stage .list li div span:nth-of-type(2) {
+  animation-duration: 0.5s;
+}
+body .stage .list li div span:nth-of-type(3) {
+  animation-duration: 0.8s;
+}
+body .stage .card {
+  display: flex;
+  padding: 25px;
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 15px 0 gray;
+}
+body .stage .card .mask {
+  position: absolute;
+  background: url("https://www.17sucai.com/preview/1160620/2018-10-11/Music-player/images/songs/c.jpg");
+  background-size: cover;
+  background-position: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: blur(20px) brightness(0.6);
+  transform: scale(1.2);
+  z-index: -1;
+}
+body .stage .card .glue {
+  width: 130px;
+  height: 130px;
+  background: url("https://www.17sucai.com/preview/1160620/2018-10-11/Music-player/images/cd.png");
+  background-size: 100%;
+  padding: 25px;
+  box-sizing: border-box;
+  animation: mymove 6s linear infinite;
+  animation-play-state: paused;
+}
+body .stage .card .glue img {
+  width: 100%;
+  border-radius: 50%;
+}
+body .stage .card .finger {
+  background: url("https://www.17sucai.com/preview/1160620/2018-10-11/Music-player/images/cd_tou.png");
+  background-size: 100%;
+  width: 30px;
+  background-repeat: no-repeat;
+  transform-origin: 15px 10px;
+  transform: rotate(-10deg);
+  transition: all 0.3s;
+}
+body .stage .card .contral {
+  flex: 1;
+  margin-left: 25px;
+}
+body .stage .card .contral h3,
+body .stage .card .contral h5 {
+  margin: 0;
+  color: white;
+}
+body .stage .card .contral .but span {
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+body .stage .card .contral .progress p {
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+body .stage .card .contral .progress input {
+  width: 100%;
+}
+body .stage .card .contral .vlounm p {
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+body .stage .card .contral .vlounm input {
+  width: 100%;
+}
+body .stage .card .contral .time span {
+  color: white;
+}
+body .playing .card .glue {
+  animation-play-state: running;
+}
+body .playing .card .finger {
+  transform: rotate(10deg);
+}
+body .playing ul li div {
+  opacity: 1;
+}
+@keyframes mymove {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes move {
+  from {
+    height: 8px;
+  }
+  to {
+    height: 18px;
+  }
+}
+/*# sourceMappingURL=./main.css.map */

@@ -1,0 +1,127 @@
+html {
+  height: 100%;
+  width: 100%;
+  body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    background: #d0d0d0;
+  }
+  .leftBox {
+    width: 20%;
+    height: 100%;
+    background: #2c3e50;
+    position: fixed;
+    left: 0;
+    top: 0;
+    .Icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 100px auto;
+      img {
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+      }
+    }
+    ul {
+      margin: 10% auto;
+      padding: 0;
+      li {
+        width: 100%;
+        height: 50px;
+        list-style: none;
+        text-align: center;
+        margin: 5px auto;
+        a {
+          color: black;
+          font-size: 18px;
+          text-decoration: none;
+        }
+      }
+      li:hover {
+        transition: all 1s;
+        a {
+          transition: inherit;
+          color: white;
+          font-size: 24px;
+        }
+      }
+    }
+  }
+  .rightBox {
+    width: 80%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    .box {
+      width: 250px;
+      height: 300px;
+      border: 1px solid gray;
+      border-radius: 5px;
+      margin: 20px;
+      background: white;
+      .boxUp {
+        width: 80%;
+        height: 50%;
+        margin: 20px 20px 0px 20px;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .boxDown{
+          width: 100%;
+          height: 15%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-top: 50px;
+          a{
+              text-decoration: none;
+              color: black;
+              font-weight: 550;
+          }
+      }
+    }
+  }
+}
+@media (max-width: 1920px) {
+  .Icon {
+    width: 160px;
+    height: 160px;
+  }
+}
+@media (max-width: 1170px) {
+  .Icon {
+    width: 150px;
+    height: 150px;
+  }
+}
+@media (max-width: 750px) {
+  .Icon {
+    width: 80px;
+    height: 80px;
+  }
+}
+@media (max-width: 520px) {
+  .Icon {
+    width: 60px;
+    height: 60px;
+  }
+}
+@media (max-width: 320px) {
+  .Icon {
+    width: 40px;
+    height: 40px;
+  }
+}

@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+</head>
+
+<body>
+    <h1>柱状图：</h1>
+    <h2>原生JS实现：</h2>
+    <div class="box">
+        <canvas id="box" width="380" height="300"></canvas>
+    </div>
+
+    <form id="form1">
+        <input type="text" id="input1" name="x" placeholder="第一个柱状图的数据">
+        <input type="text" id="input2" name="y" placeholder="第二个柱状图的数据">
+        <input type="text" id="input3" name="z" placeholder="第三个柱状图的数据">
+        <input type="text" id="input4" name="a" placeholder="第四个柱状图的数据">
+        <input type="text" id="input5" name="b" placeholder="第五个柱状图的数据">
+    </form>
+    <button id="but">填入数据，生成柱状图</button>
+    <h1>折线图：</h1>
+    <h2>原生JS实现：</h2>
+    <div class="box">
+        <canvas id="box2" width="380" height="300"></canvas>
+    </div>
+
+    <form id="form2">
+        <input type="text" id="1input1" name="x" placeholder="第一个柱状图的数据">
+        <input type="text" id="2input2" name="y" placeholder="第二个柱状图的数据">
+        <input type="text" id="3input3" name="z" placeholder="第三个柱状图的数据">
+        <input type="text" id="4input4" name="a" placeholder="第四个柱状图的数据">
+        <input type="text" id="5input5" name="b" placeholder="第五个柱状图的数据">
+    </form>
+    <button id="but1">填入数据，生成柱状图</button>
+    <h1>柱状与折线图：</h1>
+    <h2>原生JS实现：</h2>
+    <canvas id="canvas" width="300" height="300"></canvas>
+    <form id="form3">
+        <input type="text" id="inputx" name="x" placeholder="第一个柱状图的数据">
+        <input type="text" id="inputx2" name="y" placeholder="第二个柱状图的数据">
+        <input type="text" id="inputx3" name="z" placeholder="第三个柱状图的数据">
+        <input type="text" id="inputx4" name="a" placeholder="第四个柱状图的数据">
+        <input type="text" id="inputx5" name="b" placeholder="第五个柱状图的数据">
+    </form>
+    <button id="but2">填入数据，生成柱状图</button>
+    <h1>柱状图：</h1>
+    <h2>echarts实现：</h2>
+    <div id="main" style="width: 600px;height:400px;"></div>
+    <h1>折线图：</h1>
+    <h2>echarts实现：</h2>
+    <div id="main2" style="width: 600px;height:400px;"></div>
+    <h1>柱状与折线图：</h1>
+    <h2>echarts实现：</h2>
+    <div id="main3" style="width: 600px;height:400px;"></div>
+    <h1>堆叠条形图：</h1>
+    <h2>echarts实现：</h2>
+    <div id="main4" style="width: 600px;height:400px;"></div>
+    <h1>柱状与饼状图图：</h1>
+    <h2>echarts实现：</h2>
+    <div id="main5" style="width: 600px;height:400px;"></div>
+</body>
+<script>
+    var canvas = document.getElementById("canvas");
+    var context3 = canvas.getContext("2d");
+    var canvas = document.getElementById('box')
+    var canvas2 = document.getElementById('box2')
+    var but = document.getElementById('but')
+    var but1 = document.getElementById('but1')
+    var but2 = document.getElementById('but2')
+    var context = canvas.getContext('2d')
+    var context2 = canvas2.getContext('2d')
+    var input = document.querySelectorAll('#form1>input')
+    var input2 = document.querySelectorAll('#form2>input')
+    var input3 = document.querySelectorAll('#form3>input')
+
+    var arr = [];
+
+    var n = 0;
+
+    var myChart = echarts.init(document.getElementById('main'));
+    var myChart2 = echarts.init(document.getElementById('main2'));
+    var myChart3 = echarts.init(document.getElementById('main3'));
+    var myChart4 = echarts.init(document.getElementById('main4'));
+    var myChart5 = echarts.init(document.getElementById('main5'));
+
+    var builderJson = {
+        "all": 10887,
+        "charts": {
+            "map": 3237,
+            "lines": 2164,
+            "bar": 7561,
+            "line": 7778,
+            "pie": 7355,
+            "scatter": 2405,
+            "candlestick": 1842,
+            "radar": 2090,
+            "heatmap": 1762,
+            "treemap": 1593,
+            "graph": 2060,
+            "boxplot": 1537,
+            "parallel": 1908,
+            "gauge": 2107,
+            "funnel": 1692,
+            "sankey": 1568
+        },
+        "components": {
+            "geo": 2788,
+            "title": 9575,
+            "legend": 9400,
+            "tooltip": 9466,
+            "grid": 9266,
+            "markPoint": 3419,
+            "markLine": 2984,
+            "timeline": 2739,
+            "dataZoom": 2744,
+            "visualMap": 2466,
+            "toolbox": 3034,
+            "polar": 1945
+        },
+        "ie": 9743
+    };
+
+    var downloadJson = {
+        "echarts.min.js": 17365,
+        "echarts.simple.min.js": 4079,
+        "echarts.common.min.js": 6929,
+        "echarts.js": 14890
+    };
+
+    var themeJson = {
+        "dark.js": 1594,
+        "infographic.js": 925,
+        "shine.js": 1608,
+        "roma.js": 721,
+        "macarons.js": 2179,
+        "vintage.js": 1982
+    };
+
+    var waterMarkText = 'ECHARTS';
+
+    var canvas = document.createElement('canvas');
+    var ctx = canvas.getContext('2d');
+    canvas.width = canvas.height = 100;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.globalAlpha = 0.08;
+    ctx.font = '20px Microsoft Yahei';
+    ctx.translate(50, 50);
+    ctx.rotate(-Math.PI / 4);
+    ctx.fillText(waterMarkText, 0, 0);
+
+    var option5 = {
+        backgroundColor: {
+            type: 'pattern',
+            image: canvas,
+            repeat: 'repeat'
+        },
+        tooltip: {},
+        title: [{
+            text: '在线构建',
+            subtext: '总计 ' + builderJson.all,
+            left: '25%',
+            textAlign: 'center'
+        }, {
+            text: '各版本下载',
+            subtext: '总计 ' + Object.keys(downloadJson).reduce(function (all, key) {
+                return all + downloadJson[key];
+            }, 0),
+            left: '75%',
+            textAlign: 'center'
+        }, {
+            text: '主题下载',
+            subtext: '总计 ' + Object.keys(themeJson).reduce(function (all, key) {
+                return all + themeJson[key];
+            }, 0),
+            left: '75%',
+            top: '50%',
+            textAlign: 'center'
+        }],
+        grid: [{
+            top: 50,
+            width: '50%',
+            bottom: '45%',
+            left: 10,
+            containLabel: true
+        }, {
+            top: '55%',
+            width: '50%',
+            bottom: 0,
+            left: 10,
+            containLabel: true
+        }],
+        xAxis: [{
+            type: 'value',
+            max: builderJson.all,
+            splitLine: {
+                show: false
+            }
+        }, {
+            type: 'value',
+            max: builderJson.all,
+            gridIndex: 1,
+            splitLine: {
+                show: false
+            }
+        }],
+        yAxis: [{
+            type: 'category',
+            data: Object.keys(builderJson.charts),
+            axisLabel: {
+                interval: 0,
+                rotate: 30
+            },
+            splitLine: {
+                show: false
+            }
+        }, {
+            gridIndex: 1,
+            type: 'category',
+            data: Object.keys(builderJson.components),
+            axisLabel: {
+                interval: 0,
+                rotate: 30
+            },
+            splitLine: {
+                show: false
+            }
+        }],
+        series: [{
+            type: 'bar',
+            stack: 'chart',
+            z: 3,
+            label: {
+                normal: {
+                    position: 'right',
+                    show: true
+                }
+            },
+            data: Object.keys(builderJson.charts).map(function (key) {
+                return builderJson.charts[key];
+            })
+        }, {
+            type: 'bar',
+            stack: 'chart',
+            silent: true,
+            itemStyle: {
+                normal: {
+                    color: '#eee'
+                }
+            },
+            data: Object.keys(builderJson.charts).map(function (key) {
+                return builderJson.all - builderJson.charts[key];
+            })
+        }, {
+            type: 'bar',
+            stack: 'component',
+            xAxisIndex: 1,
+            yAxisIndex: 1,
+            z: 3,
+            label: {
+                normal: {
+                    position: 'right',
+                    show: true
+                }
+            },
+            data: Object.keys(builderJson.components).map(function (key) {
+                return builderJson.components[key];
+            })
+        }, {
+            type: 'bar',
+            stack: 'component',
+            silent: true,
+            xAxisIndex: 1,
+            yAxisIndex: 1,
+            itemStyle: {
+                normal: {
+                    color: '#eee'
+                }
+            },
+            data: Object.keys(builderJson.components).map(function (key) {
+                return builderJson.all - builderJson.components[key];
+            })
+        }, {
+            type: 'pie',
+            radius: [0, '30%'],
+            center: ['75%', '25%'],
+            data: Object.keys(downloadJson).map(function (key) {
+                return {
+                    name: key.replace('.js', ''),
+                    value: downloadJson[key]
+                }
+            })
+        }, {
+            type: 'pie',
+            radius: [0, '30%'],
+            center: ['75%', '75%'],
+            data: Object.keys(themeJson).map(function (key) {
+                return {
+                    name: key.replace('.js', ''),
+                    value: themeJson[key]
+                };
+            })
+        }]
+    };
+    myChart5.setOption(option5);
+
+
+
+    var option4 = {
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+                type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+            }
+        },
+        legend: {
+            data: ['直接访问', '邮件营销', '联盟广告', '视频广告', '搜索引擎']
+        },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+        },
+        xAxis: {
+            type: 'value'
+        },
+        yAxis: {
+            type: 'category',
+            data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+        },
+        series: [
+            {
+                name: '直接访问',
+                type: 'bar',
+                stack: '总量',
+                label: {
+                    show: true,
+                    position: 'insideRight'
+                },
+                data: [320, 302, 301, 334, 390, 330, 320]
+            },
+            {
+                name: '邮件营销',
+                type: 'bar',
+                stack: '总量',
+                label: {
+                    show: true,
+                    position: 'insideRight'
+                },
+                data: [120, 132, 101, 134, 90, 230, 210]
+            },
+            {
+                name: '联盟广告',
+                type: 'bar',
+                stack: '总量',
+                label: {
+                    show: true,
+                    position: 'insideRight'
+                },
+                data: [220, 182, 191, 234, 290, 330, 310]
+            },
+            {
+                name: '视频广告',
+                type: 'bar',
+                stack: '总量',
+                label: {
+                    show: true,
+                    position: 'insideRight'
+                },
+                data: [150, 212, 201, 154, 190, 330, 410]
+            },
+            {
+                name: '搜索引擎',
+                type: 'bar',
+                stack: '总量',
+                label: {
+                    show: true,
+                    position: 'insideRight'
+                },
+                data: [820, 832, 901, 934, 1290, 1330, 1320]
+            }
+        ]
+    };
+    myChart4.setOption(option4);
+
+
+
+    var option3 = {
+        title: {
+            text: '一天用电量分布',
+            subtext: '纯属虚构'
+        },
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'cross'
+            }
+        },
+        toolbox: {
+            show: true,
+            feature: {
+                saveAsImage: {}
+            }
+        },
+        xAxis: {
+            type: 'category',
+            boundaryGap: false,
+            data: ['00:00', '01:15', '02:30', '03:45', '05:00', '06:15', '07:30', '08:45', '10:00', '11:15', '12:30', '13:45', '15:00', '16:15', '17:30', '18:45', '20:00', '21:15', '22:30', '23:45']
+        },
+        yAxis: {
+            type: 'value',
+            axisLabel: {
+                formatter: '{value} W'
+            },
+            axisPointer: {
+                snap: true
+            }
+        },
+        visualMap: {
+            show: false,
+            dimension: 0,
+            pieces: [{
+                lte: 6,
+                color: 'green'
+            }, {
+                gt: 6,
+                lte: 8,
+                color: 'red'
+            }, {
+                gt: 8,
+                lte: 14,
+                color: 'green'
+            }, {
+                gt: 14,
+                lte: 17,
+                color: 'red'
+            }, {
+                gt: 17,
+                color: 'green'
+            }]
+        },
+        series: [
+            {
+                name: '用电量',
+                type: 'line',
+                smooth: true,
+                data: [300, 280, 250, 260, 270, 300, 550, 500, 400, 390, 380, 390, 400, 500, 600, 750, 800, 700, 600, 400],
+                markArea: {
+                    data: [[{
+                        name: '早高峰',
+                        xAxis: '07:30'
+                    }, {
+                        xAxis: '10:00'
+                    }], [{
+                        name: '晚高峰',
+                        xAxis: '17:30'
+                    }, {
+                        xAxis: '21:15'
+                    }]]
+                }
+            }
+        ]
+    };
+    myChart3.setOption(option3);
+
+
+
+
+
+    var option2 = {
+        xAxis: {
+            type: 'category',
+            data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+        },
+        yAxis: {
+            type: 'value'
+        },
+        series: [{
+            data: [820, 932, 901, 934, 1290, 1330, 1320],
+            type: 'line'
+        }]
+    };
+    myChart2.setOption(option2);
+
+
+
+
+    var option = {
+        title: {
+            text: 'ECharts 入门示例'
+        },
+        tooltip: {},
+        legend: {
+            data: ['销量']
+        },
+        xAxis: {
+            data: ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"]
+        },
+        yAxis: {},
+        series: [{
+            name: '销量',
+            type: 'bar',
+            data: [5, 20, 36, 10, 10, 20]
+        }]
+    };
+    // console.log(option);
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+
+    context3.translate(30, 270);
+    but2.onclick = function () {
+        for (let i = 0; i <= input3.length - 1; i++) {
+            arr[i] = input3[i].value
+            // console.log(input3[i].value);
+
+        }
+        // console.log(arr); 
+        function xxx() {
+            function drawXY() {
+                context3.moveTo(0, 0);
+                context3.lineTo(240, 0);
+                context3.stroke();
+                context3.moveTo(0, 0);
+                context3.lineTo(0, -240);
+                context3.stroke();
+            }
+            drawXY();
+            function drawColumn(array) {
+                var g = 10;
+                var w = (240 - (array.length + 1) * g) / array.length;
+                context3.fillStyle = "orange";
+
+                context3.beginPath();
+                array.forEach(function (element, index) {
+
+                    context3.fillRect(g + (w + g) * index, 0, w, (-element / 100) * n);
+
+
+                    if (index == 0) {
+                        context3.moveTo(g + (w + g) * index + w / 2, -element);
+                    } else {
+                        context3.lineTo(g + (w + g) * index + w / 2, -element);
+                    }
+                });
+                context3.strokeStyle = "red";
+                context3.stroke();
+
+            }
+            drawColumn(arr);
+        }
+
+        var id = setInterval(function () {
+
+            context3.clearRect(0, 0, 300, -300);
+
+            n++;
+            // console.log(n);
+
+            xxx();
+
+            if (n >= 100) clearInterval(id);
+        }, 30);
+    }
+
+
+
+
+    but.onclick = function (element, index) {
+        context.clearRect(0, 0, 380, 300);
+        draw(input[0].value, input[1].value, input[2].value, input[3].value, input[4].value)
+    }
+    but1.onclick = function () {
+        context2.clearRect(0, 0, 380, 300);
+        drawLine(input2[0].value, input2[1].value, input2[2].value, input2[3].value, input2[4].value)
+    }
+    function draw(x, y, z, a, b) {
+        context.fillStyle = 'pink';
+        context.fillRect(20, (canvas.offsetHeight - 2) - x, 40, x);
+        context.fillRect(80, (canvas.offsetHeight - 2) - y, 40, y);
+        context.fillRect(160, (canvas.offsetHeight - 2) - z, 40, z);
+        context.fillRect(240, (canvas.offsetHeight - 2) - a, 40, a);
+        context.fillRect(320, (canvas.offsetHeight - 2) - b, 40, b);
+        context.closePath();
+    }
+    function drawLine(x, y, z, a, b) {
+        context2.beginPath();
+        context2.moveTo(0, 300);
+        context2.lineTo(50, canvas2.offsetHeight - x);
+        context2.lineTo(100, canvas2.offsetHeight - y);
+        context2.lineTo(150, canvas2.offsetHeight - z);
+        context2.lineTo(200, canvas2.offsetHeight - a);
+        context2.lineTo(250, canvas2.offsetHeight - b);
+        context2.lineTo(320, 300);
+        context2.stroke();
+        context2.closePath();
+    }
+</script>
+
+</html>

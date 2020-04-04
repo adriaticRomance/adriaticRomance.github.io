@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>商品规格选择</title>
+	<style type="text/css">
+		@font-face {
+  			font-family: 'iconfont';
+  			src: url('fonts/iconfont.eot');
+  			src: url('fonts/iconfont.eot?#iefix') format('embedded-opentype'),
+     		url('fonts/iconfont.woff2') format('woff2'),
+      		url('fonts/iconfont.woff') format('woff'),
+      		url('fonts/iconfont.ttf') format('truetype'),
+      		url('fonts/iconfont.svg#iconfont') format('svg');
+		}
+		.iconfont {
+  			font-family: "iconfont" !important;
+  			font-size: 16px;
+  			font-style: normal;
+  			-webkit-font-smoothing: antialiased;
+  			-moz-osx-font-smoothing: grayscale;
+		}
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box{
+			width: 1000px;
+			height: 500px;
+			margin:50px auto;
+			border-radius: 5px;
+			border: 1px solid gray;
+		}
+		.box .up{
+			height: 400px;
+			width: 100%;
+		}
+		.box .up .Brand{
+			height: 100px;
+			width: 960px;
+			margin-left: 20px;
+			line-height: 100px;
+			border-bottom: 1px dotted gray;
+		}
+		.box .up .Brand div{
+			width: 50px;
+			height: 100px;
+			float: left;
+			margin-left: 25px;
+			cursor:pointer;
+		}
+		.box .up .Brand div:first-child{
+			margin-left: 0px;
+			cursor:default;
+			color: gray;
+
+		}
+		.box .up .price{
+			height: 100px;
+			width: 960px;
+			margin-left: 20px;
+			line-height: 100px;
+			border-bottom: 1px dotted gray;
+		}
+		.box .up .price div{
+			font-size: 14px;
+			width: 80px;
+			height: 100%;
+			float: left;
+			margin-left: 20px;
+			cursor:pointer;
+		}
+		.box .up .price div:first-child{
+			margin-left: 0px;
+			cursor:default;
+			color: gray;
+
+		}
+		.box .up .price div:nth-child(2){
+			margin-left: -7px;
+		}
+		.box .up .size{
+			height: 100px;
+			width: 960px;
+			margin-left: 20px;
+			line-height: 100px;
+			border-bottom: 1px dotted gray;
+		}
+		.box .up .size div{
+			width: 55px;
+			height: 100%;
+			float: left;
+			margin-left: 20px;
+			cursor:pointer;
+		}
+		.box .up .size div:first-child{
+			margin-left: 0px;
+			cursor:default;
+			color: gray;
+
+		}
+		.box .up .size div:nth-child(2){
+			width: 125px;
+		}
+		.box .up .graphicsCard{
+			height: 100px;
+			width: 960px;
+			margin-left: 20px;
+			line-height: 100px;
+			border-bottom: 1px dotted gray;
+		}
+		.box .up .graphicsCard div{
+			width: 70px;
+			height: 96px;
+			float: left;
+			margin-left: 20px;
+			cursor:pointer;
+		}
+		.box .up .graphicsCard div:first-child{
+			margin-left: 0px;
+			cursor:default;
+			color: gray;
+		}
+		.box .up .graphicsCard div:nth-child(2){
+			margin-left: 3px;
+		}
+		.box .down{
+			height: 100px;
+			width: 1000px;
+			background: #efefef;
+			line-height: 100px;
+		}
+		.box .down div{
+			width: 100px;
+			height: 100px;
+			float: left;
+		}
+		.box .down .select1{
+			color: gray;
+			margin-left: 17px;
+		}
+		.box .down .select2{
+			border:1px solid red;
+			width: 110px;
+			height: 30px;
+			font-size: 12px;
+			line-height: 30px;
+			text-align: center;
+			background: white;
+			margin-top: 35px;
+			margin-right: 20px;
+			border-radius: 5px;
+		}
+		.box .down button{
+			background: red;
+			color: white;
+			border-radius: 5px;
+			width: 20px;
+			height: 20px;
+			margin-right: 0px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="up">
+			<div class="Brand">
+				<div>品牌：</div>
+				<div class="butB" name='butB'>惠普</div>
+				<div class="butB" name='butB'>联想</div>
+				<div class="butB" name='butB'>戴尔</div>
+				<div class="butB" name='butB'>三星</div>
+				<div class="butB" name='butB'>宏基</div>
+				<div class="butB" name='butB'>苹果</div>
+				<div class="butB" name='butB'>神舟</div>
+				<div class="butB" name='butB'>华硕</div>
+				<div class="butB" name='butB'>方正</div>
+			</div>
+			<div class="price">
+				<div>价格：</div>
+				<div class="butP" name='butP'>3000-3999</div>
+				<div class="butP" name='butP'>4000-4999</div>
+				<div class="butP" name='butP'>5000-5999</div>
+				<div class="butP" name='butP'>6000-6999</div>
+				<div class="butP" name='butP'>7000-7999</div>
+				<div class="butP" name='butP'>8000-8999</div>
+				<div class="butP" name='butP'>9000-9999</div>
+				<div class="butP" name='butP'>10000以上</div>
+			</div>
+			<div class="size">
+				<div>尺寸：</div>
+				<div class="butS" name='butS'>8.9英寸以及以下</div>
+				<div class="butS" name='butS'>11英寸</div>
+				<div class="butS" name='butS'>12英寸</div>
+				<div class="butS" name='butS'>13英寸</div>
+				<div class="butS" name='butS'>14英寸</div>
+				<div class="butS" name='butS'>15英寸</div>
+				<div class="butS" name='butS'>16英寸</div>
+			</div>
+			<div class="graphicsCard">
+				<div>显卡：</div>
+				<div class="butC" name='butC'>独立显卡</div>
+				<div class="butC" name='butC'>集成显卡</div>
+				<div class="butC" name='butC'>核芯显卡</div>
+			</div>
+		</div>
+		<div class="down" id="down">
+			<div class="select1">已选条件：</div>
+			<div class="select2" style="display: none" id='sel1'>惠普 <button style="border:none;">X</button></div>
+			<div class="select2" style="display: none" id='sel2'>4000-4999 <button style="border:none;">X</button></div>
+			<div class="select2" style="display: none" id='sel3'>11英寸 <button style="border:none;">X</button></div>
+			<div class="select2" style="display: none" id='sel4'>独立显卡 <button style="border:none;">X</button></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		// window.onload = function(){
+		// 	var but = document.getElementsByName('but')
+		// 	var button = document.getElementsByTagName('button')
+		// 	var butBarr = new Array()
+		// 	var butt = new Butt(but,butBarr,button)
+		// }
+		// function Butt(but,butBarr,button){
+		// 	this.but = but
+		// 	this.butBarr = butBarr
+		// 	this.button = button
+		// 	this.init()
+		// }
+		// Butt.prototype.init = function(){
+		// 	var that = this
+		// 	for(let i=0;i<this.but.length;i++){
+		// 		this.but[i].onclick = function(e){
+		// 		 	that.but[i].style.color = 'red'
+		// 		 	var div = document.createElement('div')
+		// 		 	var button = document.createElement('button')
+		// 		 	var down = document.getElementById('down')
+		// 		 	div.className = 'select2'
+		// 		 	div.innerHTML = that.but[i].innerHTML
+		// 		 	button.innerHTML = 'X'
+		// 		 	div.appendChild(button)
+		// 		 	down.appendChild(div)
+		// 		}
+		// 	}	
+		// 	for(let j=0;j<this.button.length;j++){
+		// 		this.button[j].onclick = function(e){
+		// 			console.log(1)
+		// 		}
+		// 	}
+		// }
+		var butB = document.getElementsByName('butB') 
+		var butP = document.getElementsByName('butP') 
+		var butS = document.getElementsByName('butS') 
+		var butC = document.getElementsByName('butC') 
+		var sel1 = document.getElementById('sel1')
+		var sel2 = document.getElementById('sel2')
+		var sel3 = document.getElementById('sel3')
+		var sel4 = document.getElementById('sel4')
+		sel1.onclick = function(){
+			sel1.style.display = 'none'
+		}
+		sel2.onclick = function(){
+			sel2.style.display = 'none'
+		}
+		sel3.onclick = function(){
+			sel3.style.display = 'none'
+		}
+		sel4.onclick = function(){
+			sel4.style.display = 'none'
+		}
+		for(let i=0;i<butB.length;i++){
+
+			butB[i].onclick = function(){				
+				sel1.style.display = 'block'
+				var butBo = butB[i].parentNode.children
+				for(var z=0;z<butBo.length;z++){
+					butBo[z].style.color = 'black'
+					butBo[0].style.color = 'gray'
+				}
+				butB[i].style.color = 'red'
+				sel1.innerHTML = butB[i].innerHTML
+				var button = document.createElement('button')
+				button.innerHTML = 'X'
+				sel1.appendChild(button)
+			}
+		}
+		for(let j=0;j<butP.length;j++){
+			butP[j].onclick = function(){
+				sel2.style.display = 'block'
+				var butPo = butP[j].parentNode.children
+				for(var q=0;q<butPo.length;q++){
+					butPo[q].style.color = 'black'
+					butPo[0].style.color = 'gray'
+				}
+				butP[j].style.color = 'red'
+				sel2.innerHTML = butP[j].innerHTML
+				var button = document.createElement('button')
+				button.innerHTML = 'X'
+				sel2.appendChild(button)
+			}
+		}
+		for(let n=0;n<butS.length;n++){
+			butS[n].onclick = function(){
+				sel3.style.display = 'block'
+				var butSo = butS[n].parentNode.children
+				for(var w=0;w<butSo.length;w++){
+					butSo[w].style.color = 'black'
+					butSo[0].style.color = 'gray'
+				}
+				butS[n].style.color = 'red'
+				sel3.innerHTML = butS[n].innerHTML
+				var button = document.createElement('button')
+				button.innerHTML = 'X'
+				sel3.appendChild(button)
+			}
+		}
+		for(let m=0;m<butC.length;m++){
+			butC[m].onclick = function(){
+				sel4.style.display = 'block'
+				var butCo = butC[m].parentNode.children
+				for(var e=0;e<butCo.length;e++){
+					butCo[e].style.color = 'black'
+					butCo[0].style.color = 'gray'
+				}
+				butC[m].style.color = 'red'
+				sel4.innerHTML = butC[m].innerHTML
+				var button = document.createElement('button')
+				button.innerHTML = 'X'
+				sel4.appendChild(button)
+			}
+		}
+	</script>
+</body>
+</html>

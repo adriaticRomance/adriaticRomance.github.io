@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>美丽说-潮流穿搭快人一步</title>
+	<!-- 网页图标设置 -->
+	<link rel="shortcut icon" href="favicon.ico" />
+	<style type="text/css">
+	/*<!-- 网页初始样式设置开始 -->*/
+		*{
+			margin: 0px;
+			padding: 0;
+		}
+		li{
+			list-style: none;
+		}
+		/*左浮类*/
+		.fl{
+			float: left;
+		}
+		/*右浮类*/
+		.fr{
+			float: right;
+		}
+		/*版心类*/
+		.w{
+			width: 1200px;
+			margin: 0 auto;
+		}
+		/*链接设置*/
+		a{
+			color: #666;
+			text-decoration: none;
+		}
+		a:hover{
+			color: #f36;
+		}
+		/*去掉图片标签底部空隙*/
+		img{
+			vertical-align: bottom;
+		}
+		/*去掉input标签外轮廓线*/
+		input{
+			outline: none;
+		}
+		/*设置总体的文字样式*/
+		body{
+			font-size:14px;
+			font-family: "微软雅黑"，"宋体"; 
+		}
+	/*<!-- 网页初始样式设置结束 -->*/
+	/*头部导航栏样式设置*/
+	.head{
+		background-color: #f8f8f8;
+		width: 100%;
+		height: 30px;
+		line-height: 30px;
+	}
+	.head ul{
+		float: right;
+	}
+	.head ul li{
+		float: left;
+	}
+	.head ul li a{
+		text-align: center;
+		line-height: 30px;
+		padding-right:20px;
+		padding-left: 20px; 
+		font-size: 13px;
+		border-right:1px solid #cccccc; 
+		height: 15px;
+		/*display: inline-block;*/
+	}
+	.head ul li:last-child a{
+		border-right:none; 
+	}
+	.head  ul li a span{
+		background: url(images/top_nav.png);
+		height: 16px;
+		width: 20px;
+		display: inline-block;
+		margin-right:10px;
+		vertical-align:-3px;
+	}
+	.head  ul li a span.wechat{
+		background-position: -25px top;
+	}
+	.head  ul li a span.qq{
+		background-position: -50px top;
+	}
+	.head  ul li a span.collection{
+		background-position: -75px top;
+	}
+	.head  ul li a span.shopcar{
+		background-position: -100px top;
+	}
+	.head  ul li a span.orderlist{
+		background-position: -125px top;
+	}
+	.head  ul li a span.helpcenter{
+		background-position: -175px top;
+	}
+	/*头部导航栏下拉框*/
+	.head ul .downfather{
+		position: relative;
+	}
+	.head ul .downfather .downone{
+		width: 94px;
+		position: absolute;
+		top: 30px;
+		left: 0;
+		background-color: #f8f8f8;
+		border: 1px solid #f1f1f1;
+		display: none;
+	}
+	.head ul .downfather:hover .downone{
+		display: block;
+	}
+	.head ul .downfather .downone .downa{
+		border-right: 0px solid #cccccc;
+	}
+	.head ul .helpnav {
+		position: relative;
+	}
+	.head ul .helpnav .helpdown{
+		position: absolute;
+		top: 30px;
+		width: 94px;
+		left: 0;
+		background: #f8f8f8;
+		display: none;
+	}
+	.head ul .helpnav:hover .helpdown{
+		display: block;
+	}
+	.head ul .helpnav .helpdown a{
+		border-right: 0px solid #cccccc;
+	}
+	/*头部导航栏样式结束*/
+	/*右边导航栏样式开始*/
+	/*图标样式表开始*/
+	@font-face {
+		  font-family: 'iconfont';
+		  src: url('fonts/iconfont.eot');
+		  src: url('fonts/iconfont.eot?#iefix') format('embedded-opentype'),
+		      url('fonts/iconfont.woff2') format('woff2'),
+		      url('fonts/iconfont.woff') format('woff'),
+		      url('fonts/iconfont.ttf') format('truetype'),
+		      url('fonts/iconfont.svg#iconfont') format('svg');
+		}
+	@font-face {
+  		font-family: 'iconfont';
+  		src: url('fonts/iconfontback.eot');
+  		src: url('fonts/iconfontback.eot?#iefix') format('embedded-opentype'),
+     		 url('fonts/iconfontback.woff2') format('woff2'),
+      		url('fonts/iconfontback.woff') format('woff'),
+      		url('fonts/iconfontback.ttf') format('truetype'),
+      		url('fonts/iconfontback.svg#iconfont') format('svg');
+		}
+	.iconfont {
+		  font-family: "iconfont" !important;
+		  font-size: 16px;
+		  font-style: normal;
+		  -webkit-font-smoothing: antialiased;
+		  -moz-osx-font-smoothing: grayscale;
+		}
+	.iconfont {
+  		font-family: "iconfont" !important;
+  		font-size: 16px;
+  		font-style: normal;
+  		-webkit-font-smoothing: antialiased;
+  		-moz-osx-font-smoothing: grayscale;
+		}
+	/*图表样式表结束*/
+	.rightnav{
+		background-color: #f6f6f6;
+		height: 100%;
+		border: 1px solid #dddddd;
+		width: 44px;
+		position: fixed;
+		top: 0;
+		right: 0;
+		font-size: 14px;
+		/*display: none;*/
+	}
+	.rightnav .rightqrcode{
+		position: relative;
+		background-color: #ffffff;
+		/*display: none;*/
+		/*z-index: 3;*/
+	}
+	.rightnav ul {
+		margin-top: 70px;
+		position: relative;
+	}
+	.rightnav ul li{
+		border-top:1px solid #dddddd; 
+		background: #f6f6f6;
+	}
+	.rightnav ul li:hover{
+		background: #f33866;
+	}
+	.rightnav ul li a .iconfont{
+		color: #ff3366;
+	}
+	.rightnav ul li a:hover .iconfont{
+		color: white;
+	}
+	.rightnav ul li a{
+		width: 14px;
+		padding: 15px;
+		display: block;
+	}
+	.rightnav ul li a:hover{
+		color: white;
+	}
+	.rightnav ul .rightapp{
+		display: block;
+		transform: rotate(90deg);
+	}
+	.rightnav ul li:nth-child(2) a span{
+		font-size: 14px;
+		margin-left: -2px;
+	}
+	.rightnav ul li:nth-child(1) .rightqrcode{
+		position: absolute;
+		left: -168px;
+		top: 0px;
+		border: 1px solid #dddddd;
+		padding: 13px;
+		display: none;
+	}
+	.rightnav ul li:nth-child(1):hover .rightqrcode{
+		display: block;
+	}
+	.rightnav .rightqrcode::before{
+		content: "";
+		width: 0;
+		height: 0;
+		border: 12px solid transparent;
+		border-left: 12px solid white;
+		position: absolute;
+		right: -24px;
+		top: 54px;
+		z-index: 1;
+	}
+	.rightnav .rightqrcode::after{
+		content: "";
+		width: 0;
+		height: 0;
+		border: 14px solid transparent;
+		border-left: 14px solid #dddddd;
+		position: absolute;
+		right: -28px;
+		top: 52px;
+	}
+	/*头部搜索框样式开始*/
+	.headsearch{
+		height: 157px;
+	}
+	.headsearch .search-logo a img{
+		height: 52px;
+	}
+	.headsearch .search-logo{
+		margin-top: 40px;
+		margin-right: 158px;
+	}
+	.headsearch .searchbox{
+		margin-top: 21px;
+	}
+	.headsearch .searchbox .searchbox-top span{
+		width: 56px;
+		height: 24px;
+		background: #f2f2f2;
+		text-align: center;
+		line-height: 24px;
+		cursor:pointer;
+		display: inline-block; 
+	}
+	.headsearch .searchbox .searchbox-top span:first-child{
+		background: #ff3366;
+		color: white;
+	}
+	.headsearch .searchbox .searchbox-midle{
+		height: 32px;
+		width: 520px;
+	}
+	.headsearch .searchbox .searchbox-midle input{
+		width: 445px;
+		height: 28px;
+		border: 2px solid #ff3366;
+		text-indent: 1em;
+	}
+	.headsearch .searchbox .searchbox-midle .searchimg{
+		height: 32px;
+		width: 71px;
+		background: #f36 url(images/fangdajing.png) no-repeat center center;
+		cursor: pointer;
+		float: right;
+	}
+	.headsearch .searchbox .searchbox-buttom ul li{
+		float: left;
+		margin-right: 10px;
+		font-size: 12px;
+	}
+	.headsearch .searchbox .searchbox-buttom ul li .colorchange{
+		color: #ff3366;
+	}
+	/*头部搜索框样式结束*/
+	/*右边导航栏样式结束*/
+	/*中部分栏样式开始*/
+	.middlenav{
+		height: 43px;
+		border-bottom: 1px solid #dedede;
+		line-height: 43px;
+	}
+	.middlenav ul li{
+		float: left;
+		width: 109px;
+		font-size: 16px;
+	}
+	.middlenav ul li:first-child a{
+		border-bottom: 2px solid #ff3366;
+		padding-bottom: 10px;
+		color: #ff3366;
+	}
+	.middlenav ul li a{
+		color: #333333;
+		font-family: "微软雅黑"，"宋体";
+		font-weight: 700;
+	}
+	/*中部分栏样式结束*/
+	/*中部轮播图样式开始*/
+	.container{
+		height: 400px;
+	}
+	.container .banner{
+		margin-top: 11px;
+		position: relative;
+		z-index: -1;
+	}
+	.container .banner a:nth-child(2) {
+		height: 55px;
+		width: 45px;
+		position: absolute;
+		top: 185px;
+		left: 0px;
+	}
+	.container .banner a:nth-child(3){
+		height: 55px;
+		width: 45px;
+		position: absolute;
+		top: 185px;
+		right: -9px;
+	}
+	.container .banner ul{
+		width: 195px;
+		height: 16px;
+		background-color: transparent;
+		position: absolute;
+		bottom: 12px;
+		right: 511px;
+	}
+	.container .banner ul li{
+		height: 15px;
+		width: 15px;
+		float: left;
+		border-radius: 50%;
+		background-color: rgb(255,255,255,0.8);
+		margin-right: 13px;
+	}
+	.container .banner ul li:hover{
+		border-radius: 35%;
+		width: 26px;
+	}
+	/*中部轮播图样式结束*/
+	/*中部分类块样式开始*/
+	.middleclss{
+		width: 100%;
+		height: 170px;
+		/*overflow: hidden;*/	
+	}
+	.middleclss .middleclssbox{
+		width: 1200px;
+	}
+	.middleclss .middleclssbox ul {
+		margin-top: 20px;
+	}
+	.middleclss .middleclssbox ul li img{
+		height: 170px;
+		width: 300px;
+		float: left;
+	}
+	/*中部分类块样式结束*/
+	/*商品展示条目样式开始*/
+	.commodityshow{
+		height: 888px;
+		margin-top: 50px;
+		overflow: hidden;
+	}
+	.commodityshow .commodityshowbox{
+		width: 1200px;
+	}
+	.commodityshow .commodityshowbox .commoditytitle{
+		height: 32px;
+		text-align: center;
+		line-height: 30px;
+	}
+	.commodityshow .commodityshowbox .commoditytitle>a{
+		float: right; 
+	}
+	.commodityshow .commodityshowbox .commoditytitle .commoditytitlenav a{
+		font-size: 20px;
+		color: #000;
+		margin-right: 50px;
+	}
+	.commodityshow .commodityshowbox .commoditytitle .commoditytitlenav a:hover{
+		position: relative;
+		color: #e40045;
+	}
+	.commodityshow .commodityshowbox .commoditytitle .commoditytitlenav a:hover::after{
+		content: "";
+		width: 37px;
+		height: 3px;
+		background: #e40045;
+		display: inline-block;
+		position: absolute;
+		left: 25%;
+		top: 33px;
+		margin-right: -18.5px;
+	}
+	.commodityshow .commodityshowbox .commoditytitle .commoditytitlenav a:first-child{
+		margin-right: 36px;
+		color: #e40045;
+	}
+	.commodityshow .commodityshowbox .commoditycontent{
+		height: 350px;
+		width: 220px;
+		margin-top: 30px;
+		float: left;
+		margin-right: 10px;
+		margin-left: 10px;
+		margin-bottom: 20px;
+	}
+	.commodityshow .commodityshowbox .commoditycontent .commoditybox{
+		height: 373px;
+		width: 212px;
+	}
+	.commodityshow .commodityshowbox .commoditycontent .commoditybox .commtopbox a img{
+		width: 212px;
+		height: 321px;
+	}
+	.commodityshow .commodityshowbox .commoditycontent .commoditybox .commmiddlebox span {
+		line-height: 33px;
+		position: relative;
+	}
+	.commodityshow .commodityshowbox .commoditycontent .commoditybox .commmiddlebox span:first-child{
+		font-size: 16px;
+		color: #f36;
+	}
+	.commodityshow .commodityshowbox .commoditycontent .commoditybox .commmiddlebox span:nth-child(2){
+		font-size: 14px;
+		color: #9999b3;
+		float: right;
+		z-index: -1;
+	}
+	.commodityshow .commodityshowbox .commoditycontent .commoditybox .commmiddlebox span:nth-child(2) img{
+		width: 14px;
+		height: 13px;
+		position: absolute;
+		top: 9px;
+		right: 29px;
+		z-index: -1;
+	}
+	.commodityshow .commodityshowbox .commoditycontent .commoditybox .commbuttombox{
+		font-size: 14px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+	.commodityshow .commodityshowbox .commoditycontent .commoditybox .commbuttombox span:first-child img{
+		width: 39px;
+		height: 17px;
+	}
+	.commodityshow .commodityshowbox .commoditycontent .commoditybox .commbuttombox span:last-child {
+		color: #666666;
+	}
+	/*商品展示条目样式结束*/
+	/*底部商品展示栏样式开始*/
+	.buttomshow{
+		width: 100%;
+		height: 480px;
+	}
+	.buttomshow .buttommid{
+		width: 1200px;
+	}
+	.buttomshow .buttommid .buttomshow-up{
+		height: 50px;
+		line-height: 30px;
+		text-align: center;
+	}
+	.buttomshow .buttommid .buttomshow-up .haowu{
+		float: left;
+		font-size: 20px;
+		line-height: 28px;
+		font-weight: bold;
+		color: #666666;
+	}
+	.buttomshow .buttommid .buttomshow-up > a{
+		float: right;
+		font-size: 14px;
+		margin-top: 5px;
+	}
+	.buttomshow .buttommid .buttomshow-down{
+		height: 400px;
+		width: 392px;
+		border: 1px solid #eeeeee;
+		margin-right: 6px;
+	}
+	.buttomshow .buttommid .buttomshow-down .buttomshow-pup{
+		position: relative;
+		z-index: -1;
+	}
+	.buttomshow .buttommid .buttomshow-down .buttomshow-pup img{
+		height: 224px;
+	}
+	.buttomshow .buttommid .buttomshow-down .buttomshow-pup .buttwords{
+		height: 24px;
+		width: 111px;
+		position: absolute;
+		top: 150px;
+		right: 134px;
+	}
+	.buttomshow .buttommid .buttomshow-down .buttomshow-pup .buttwords .desc{
+		color: #fff;
+		font-size: 18px;
+	}
+	.buttomshow .buttommid .buttomshow-down .buttomshow-pup .buttwords .desc::after{
+		content: "";
+		height: 0;
+		width: 0;
+		border: 5px solid transparent;
+		border-left: 5px solid rgb(255,255,255,0.9);
+		margin-left: 10px;
+		display: inline-block;
+	}
+	.buttomshow .buttommid .buttomshow-down .buttomshow-pdown{
+		margin-top: 18px;
+		width: 392px;
+	}
+	.buttomshow .buttommid .buttomshow-down .buttomshow-pdown a{
+		float: left;
+		height: 140px;
+		width: 126px;
+		margin-left: 4px;
+		text-align: center;
+		font-size: 12px;
+	}
+	.buttomshow .buttommid .buttomshow-down .buttomshow-pdown a img{
+		height: 130px;
+		width: 114px;
+	}
+	/*底部商品展示栏样式结束*/
+	/*底部信息栏样式开始*/
+	.binfo{
+		width: 1519.2px;
+		height: 320px;
+		background-color: #f5f5f5;
+		border-top: 1px solid #dddddd;
+	}
+	.binfo .binfom .binfom-up{
+		height: 234px;
+		border-bottom: 1px solid #dddddd;
+	}
+	.binfo .binfom .binfom-up .binfom-up-left{
+		width: 672px;
+		height: 188px;
+		float: left;
+	}
+	.binfo .binfom .binfom-up .binfom-up-left ul{
+		float: left;
+		width: 168px;
+		margin-top: 20px;
+	}
+	.binfo .binfom .binfom-up .binfom-up-left ul li{
+		line-height: 40px;
+		font-size: 12px;
+	}
+	.binfo .binfom .binfom-up .binfom-up-left ul li:first-child h2{
+		font-size: 16px;
+		color: #666666;
+	}
+	.binfo .binfom .binfom-up .binfom-up-left ul:last-child li span{
+		background: url(images/footer-icon.png);
+		height: 18px;
+		width: 18px;
+		display: inline-block;
+		vertical-align: sub;
+    	margin-right: 5px;
+	}
+	.binfo .binfom .binfom-up .binfom-up-left ul:last-child li .qqspan{
+		background-position:-28px 0px; 
+	}
+	.binfo .binfom .binfom-up .binfom-up-left ul:last-child li .tencentwb{
+		background-position:-56px 0px; 
+	}
+	.binfo .binfom .binfom-up .binfom-up-right{
+		width: 400px;
+		height: 145.6px;
+		float: right;
+		font-size: 14px;
+		margin-top: 30px;
+		margin-right: 90px;
+		/*display: block;*/
+	}
+	.binfo .binfom .binfom-up .binfom-up-right h3{
+		color: #666666;
+	}
+	.binfo .binfom .binfom-up .binfom-up-right .appqrcod{
+		display: inline-block;
+		text-align: center;
+		margin-right: 55px;
+	}
+	.binfo .binfom .binfom-up .binfom-up-right .appqrcod img{
+		margin-top: 20px;
+	}
+	.binfo .binfom .binfom-up .binfom-up-right .wxqrcod{
+		display: inline-block;
+		text-align: center;
+	}
+	.binfo .binfom .binfom-up .binfom-up-right .wxqrcod img{
+		margin-top: 20px;
+	}
+	.binfo .binfom-down{
+		width: 1519.2px;
+		height: 69.6px;
+		text-align: center;
+		line-height: 25px;
+		padding: 10px;
+	}
+	.binfo .binfom-down p{
+		width: 1499.2px;
+		height: 24.8px;
+		font-size: 12px;
+		color: #666666;
+	}
+	/*底部信息栏样式结束*/
+	/*返回顶部按钮样式开始*/
+	.backtop{
+		width: 45px;
+		height: 40px;
+		line-height: 40px;
+		text-align: center;
+		position: fixed;
+		right: 0;
+		bottom: 0;
+		border-top: 1px solid #ddd;
+	}
+	.backtop:hover{
+		background-color: #f33866;
+	}
+	.backtop a .iconfont{
+		color: #ff3366;
+	}
+	.backtop:hover a .iconfont{
+		color: white;
+	}
+	/*返回顶部按钮样式结束*/
+	</style>
+
+</head>
+<body>
+	<!-- 头部导航栏开始 -->
+	<div class="head">
+		<div class="w">
+			<ul >
+				<li><a href="#" ><span class="wechat"></span>微信登录</a></li>
+				<li><a href="#" ><span class="qq"></span>QQ登录</a></li>
+				<li><a href="#" class="login">登录</a></li>
+				<li><a href="#" class="sign">注册</a></li>
+				<li class="downfather"><a href="#" ><span class="collection"></span>我的收藏</a>
+					<ul class="downone">
+						<li><a href="#" class="downa">收藏宝贝</a></li>
+						<li><a href="#">收藏店铺</a></li>
+					</ul>
+				</li>
+				<li><a href="#" ><span class="shopcar"></span>我的购物车</a></li>
+				<li><a href="#" ><span class="orderlist"></span>我的订单</a></li>
+				<li class="helpnav"><a href="#" >帮助中心<span class="helpcenter"></span></a>
+				<ul class="helpdown">
+						<li><a href="#">买家服务</a></li>
+						<li><a href="#">商家服务</a></li>
+						<li><a href="#">规则中心</a></li>
+					</ul>
+				</li>
+				<li><a href="#" class="back">商家后台</a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- 头部导航栏结束 -->
+	<!-- 右边导航栏开始 -->
+	<div class="rightnav">
+		<ul>
+			<li><a href="#"><span class="iconfont">&#xe692;</span>下载<span class="rightapp">APP</span>
+			<div class="rightqrcode">
+				<img src="images/meili-app-qrcode140X140.png">
+			</div>
+			</a>
+			</li>
+			<li><a href="#"><span class="iconfont">&#xe621;</span>购物车</a></li>
+			<li><a href="#"><span class="iconfont">&#xe72c;</span>消息</a></li>
+			<li><a href="#"><span class="iconfont">&#xe693;</span>优惠券</a></li>
+			<li><a href="#"><span class="iconfont">&#xe60f;</span>收藏</a></li>
+			<li><a href="#"><span class="iconfont">&#xe638;</span>足迹</a></li>
+		</ul>
+	</div>
+	<!-- 右边导航栏结束 -->
+	<!-- 头部搜索框开始 -->
+	<div class="headsearch">
+		<div class="w">
+			<!-- logo图 -->
+			<div class="search-logo fl">
+				<a href="#"><img src="images/logo.png"></a>
+			</div>
+			<!-- 搜索框 -->
+			<div class="searchbox fl">
+				<div class="searchbox-top">
+					<span>宝贝</span><span>店铺</span>				
+				</div>
+				<div class="searchbox-midle">
+					<input type="text">
+					<span class="searchimg"></span>
+				</div>
+				<div class="searchbox-buttom">
+					<ul>
+						<li><a href="#" class="colorchange">连衣裙</a></li>
+						<li><a href="#">运动鞋</a></li>
+						<li><a href="#" class="colorchange">雪纺衫</a></li>
+						<li><a href="#" class="colorchange">衬衫</a></li>
+						<li><a href="#">薄外套</a></li>
+						<li><a href="#">T恤</a></li>
+						<li><a href="#">套装</a></li>
+						<li><a href="#">牛仔裤</a></li>
+						<li><a href="#" class="colorchange">小白鞋</a></li>
+						<li><a href="#">风衣</a></li>
+						<li><a href="#" class="colorchange">绑带凉鞋</a></li>
+						<li><a href="#">粗跟单鞋</a></li>
+					</ul>
+				</div>
+			</div>
+		<!-- 二维码 -->
+		<div class="searchqrcode fr">
+			<img src="images/meilishuo_app.gif">
+		</div>
+		</div>
+	</div>
+	<!-- 头部搜索框结束 -->
+	<!-- 中部导航栏开始 -->
+	<div class="middlenav">
+		<div class="w">
+			<ul>
+				<li><a href="#">首页</a></li>
+				<li><a href="#">上衣</a></li>
+				<li><a href="#">裙子</a></li>
+				<li><a href="#">裤子</a></li>
+				<li><a href="#">女鞋</a></li>
+				<li><a href="#">包包</a></li>
+				<li><a href="#">配饰</a></li>
+				<li><a href="#">美妆</a></li>
+				<li><a href="#">男友</a></li>
+				<li><a href="#">童装</a></li>
+				<li><a href="#">家居</a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- 中部导航栏结束 -->
+	<!-- 中部轮播图开始 -->
+	<div class="container">
+		<div class="banner w">
+			<a href="#"><img src="images/banner04.jpg"></a>
+			<a href="#" class="next"><img src="images/prev.png"></a>
+			<a href="#" class="prev"><img src="images/next.png"></a>
+			<ul>
+				<li><a href="#"></a></li>
+				<li><a href="#"></a></li>
+				<li><a href="#"></a></li>
+				<li><a href="#"></a></li>
+				<li><a href="#"></a></li>
+				<li><a href="#"></a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- 中部轮播图结束 -->
+	<!-- 中部分类块开始 -->
+	<div class="middleclss">
+		<div class="middleclssbox w">
+			<ul>
+				<li><a href="#"><img src="images/kinds01.png"></a></li>
+				<li><a href="#"><img src="images/kinds02.png"></a></li>
+				<li><a href="#"><img src="images/kinds03.png"></a></li>
+				<li><a href="#"><img src="images/kinds04.png"></a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- 中部分类块结束 -->	
+	<!-- 商品展示条目开始 -->
+	<div class="commodityshow">
+		<div class="commodityshowbox w">
+			<!-- 上部分标题 -->
+			<div class="commoditytitle">
+				<a href="#">查看更多></a>
+				<div class="commoditytitlenav">
+					<a href="#">今日新品</a>
+					<a href="#">一周热销</a>
+				</div>
+			</div>
+			<!-- 下部商品图 -->
+			<div class="commoditycontent">
+				<div class="commoditybox">
+					<div class="commtopbox"><a href="#"><img src="images/goods01.png"></a></div>
+					<div class="commmiddlebox"><span>¥ 93.75</span><span><img src="images/wjx.png">250</span></div>
+					<div class="commbuttombox"><span><img src="images/youxuan.png"></span><span> 小清新新款韩版气质收腰显瘦百搭蕾丝边V领木耳边镂空休闲连衣裙</span></div>
+				</div>
+			</div>
+			<div class="commoditycontent">
+				<div class="commoditybox">
+					<div class="commtopbox"><a href="#"><img src="images/goods02.png"></a></div>
+					<div class="commmiddlebox"><span>¥ 93.75</span><span><img src="images/wjx.png">250</span></div>
+					<div class="commbuttombox"><span><img src="images/youxuan.png"></span><span> 小清新新款韩版气质收腰显瘦百搭蕾丝边V领木耳边镂空休闲连衣裙</span></div>
+				</div>
+			</div>
+			<div class="commoditycontent">
+				<div class="commoditybox">
+					<div class="commtopbox"><a href="#"><img src="images/goods03.png"></a></div>
+					<div class="commmiddlebox"><span>¥ 93.75</span><span><img src="images/wjx.png">250</span></div>
+					<div class="commbuttombox"><span><img src="images/youxuan.png"></span><span> 小清新新款韩版气质收腰显瘦百搭蕾丝边V领木耳边镂空休闲连衣裙</span></div>
+				</div>
+			</div>
+			<div class="commoditycontent">
+				<div class="commoditybox">
+					<div class="commtopbox"><a href="#"><img src="images/goods04.png"></a></div>
+					<div class="commmiddlebox"><span>¥ 93.75</span><span><img src="images/wjx.png">250</span></div>
+					<div class="commbuttombox"><span><img src="images/youxuan.png"></span><span> 小清新新款韩版气质收腰显瘦百搭蕾丝边V领木耳边镂空休闲连衣裙</span></div>
+				</div>
+			</div>
+			<div class="commoditycontent">
+				<div class="commoditybox">
+					<div class="commtopbox"><a href="#"><img src="images/goods05.png"></a></div>
+					<div class="commmiddlebox"><span>¥ 93.75</span><span><img src="images/wjx.png">250</span></div>
+					<div class="commbuttombox"><span><img src="images/youxuan.png"></span><span> 小清新新款韩版气质收腰显瘦百搭蕾丝边V领木耳边镂空休闲连衣裙</span></div>
+				</div>
+			</div>
+			<div class="commoditycontent">
+				<div class="commoditybox">
+					<div class="commtopbox"><a href="#"><img src="images/goods06.png"></a></div>
+					<div class="commmiddlebox"><span>¥ 93.75</span><span><img src="images/wjx.png">250</span></div>
+					<div class="commbuttombox"><span><img src="images/youxuan.png"></span><span> 小清新新款韩版气质收腰显瘦百搭蕾丝边V领木耳边镂空休闲连衣裙</span></div>
+				</div>
+			</div>
+			<div class="commoditycontent">
+				<div class="commoditybox">
+					<div class="commtopbox"><a href="#"><img src="images/goods07.png"></a></div>
+					<div class="commmiddlebox"><span>¥ 93.75</span><span><img src="images/wjx.png">250</span></div>
+					<div class="commbuttombox"><span><img src="images/youxuan.png"></span><span> 小清新新款韩版气质收腰显瘦百搭蕾丝边V领木耳边镂空休闲连衣裙</span></div>
+				</div>
+			</div>
+			<div class="commoditycontent">
+				<div class="commoditybox">
+					<div class="commtopbox"><a href="#"><img src="images/goods08.png"></a></div>
+					<div class="commmiddlebox"><span>¥ 93.75</span><span><img src="images/wjx.png">250</span></div>
+					<div class="commbuttombox"><span><img src="images/youxuan.png"></span><span> 小清新新款韩版气质收腰显瘦百搭蕾丝边V领木耳边镂空休闲连衣裙</span></div>
+				</div>
+			</div>
+			<div class="commoditycontent">
+				<div class="commoditybox">
+					<div class="commtopbox"><a href="#"><img src="images/goods09.png"></a></div>
+					<div class="commmiddlebox"><span>¥ 93.75</span><span><img src="images/wjx.png">250</span></div>
+					<div class="commbuttombox"><span><img src="images/youxuan.png"></span><span> 小清新新款韩版气质收腰显瘦百搭蕾丝边V领木耳边镂空休闲连衣裙</span></div>
+				</div>
+			</div>
+			<div class="commoditycontent">
+				<div class="commoditybox">
+					<div class="commtopbox"><a href="#"><img src="images/goods10.png"></a></div>
+					<div class="commmiddlebox"><span>¥ 93.75</span><span><img src="images/wjx.png">250</span></div>
+					<div class="commbuttombox"><span><img src="images/youxuan.png"></span><span> 小清新新款韩版气质收腰显瘦百搭蕾丝边V领木耳边镂空休闲连衣裙</span></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 商品展示条目结束 -->
+	<!-- 底部商品展示开始 -->
+	<div class="buttomshow">
+		<div class="buttommid w">
+			<div class="buttomshow-up"><span class="haowu">好物组货</span><a href="#"><span>查看更多></span></a></div>
+			<div class="buttomshow-down fl">
+				<div class="buttomshow-pup">
+					<a href="#" class=""><img src="images/newProduct01.png"></a>
+					<div class="buttwords"><span class="desc">50款商品</span></div>
+				</div>
+				<div class="buttomshow-pdown">
+					<a href="#"><div class="buttomshow-pdownc">
+						<img src="images/dress01.png"><div>¥100.00</div>
+					</div></a>
+					<a href="#"><div class="buttomshow-pdownc">
+						<img src="images/dress02.png"><div>¥100.00</div>
+					</div></a>
+					<a href="#"><div class="buttomshow-pdownc">
+						<img src="images/dress03.png"><div>¥100.00</div>
+					</div></a>
+				</div>
+			</div>
+			<div class="buttomshow-down fl">
+				<div class="buttomshow-pup">
+					<a href="#" class=""><img src="images/newProduct02.png"></a>
+					<div class="buttwords"><span class="desc">50款商品</span></div>
+				</div>
+				<div class="buttomshow-pdown">
+					<a href="#"><div class="buttomshow-pdownc">
+						<img src="images/pants01.png"><div>¥100.00</div>
+					</div></a>
+					<a href="#"><div class="buttomshow-pdownc">
+						<img src="images/pants02.png"><div>¥100.00</div>
+					</div></a>
+					<a href="#"><div class="buttomshow-pdownc">
+						<img src="images/pants03.png"><div>¥100.00</div>
+					</div></a>
+				</div>
+			</div>
+			<div class="buttomshow-down fl">
+				<div class="buttomshow-pup">
+					<a href="#" class=""><img src="images/newProduct03.png"></a>
+					<div class="buttwords"><span class="desc">50款商品</span></div>
+				</div>
+				<div class="buttomshow-pdown">
+					<a href="#"><div class="buttomshow-pdownc">
+						<img src="images/shoes01.png"><div>¥100.00</div>
+					</div></a>
+					<a href="#"><div class="buttomshow-pdownc">
+						<img src="images/shoes02.png"><div>¥100.00</div>
+					</div></a>
+					<a href="#"><div class="buttomshow-pdownc">
+						<img src="images/shoes03.png"><div>¥100.00</div>
+					</div></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 底部商品展示开始 -->
+	<!-- 底部信息栏开始 -->
+	<div class="binfo">
+		<div class="binfom w">
+			<div class="binfom-up">
+				<div class="binfom-up-left">
+					<ul>
+						<li><h2>买家帮助</h2></li>
+						<li><a href="#">新手指南</a></li>
+						<li><a href="#">服务保障</a></li>
+						<li><a href="#">常见问题</a></li>
+						<li><a href="#">风险监测</a></li>
+					</ul>
+					<ul>
+						<li><h2>商家帮助</h2></li>
+						<li><a href="#">供货商招募</a></li>
+						<li><a href="#">商家后台</a></li>
+					</ul>
+					<ul>
+						<li><h2>关于我们</h2></li>
+						<li><a href="#">关于美丽说</a></li>
+						<li><a href="#">联系我们</a></li>
+					</ul>
+					<ul>
+						<li><h2>关注我们</h2></li>
+						<li><a href="#"><span class="xinlan"></span>新浪微博</a></li>
+						<li><a href="#"><span class="qqspan"></span>QQ空间</a></li>
+						<li><a href="#"><span class="tencentwb"></span>腾讯微博</a></li>
+					</ul>
+				</div>
+				<div class="binfom-up-right">
+					<div class="wxqrcod fr"><h3>美丽说客户端下载</h3><img src="images/meili-app-qrcode.png"></div>
+					<div class="appqrcod fr"><h3>美丽说微信服务号</h3><img src="images/weixin-server-qrcode.jpg"></div>
+				</div>
+			</div>
+			
+		</div>
+		<div class="binfom-down">
+				<p>Copyright ©2017 xxxxxxxx.com 电信与信息服务业务经营许可证xxxxxx号 经营性网站备案信息</p>
+				<p>京ICP备xxxxxxxx号 京公网安备xxxxxxxx 客服电话：xxxx-xxx-xxx 文明办网文明上网举报电话：xxx-xxxxxxxx 违法不良信息举报中心</p>
+		</div>
+	</div>
+	<!-- 底部信息栏结束 -->
+	<!-- 返回顶部按钮开始 -->
+	<div class="backtop" style="display: block;">
+		<a href="#">
+			<i class="iconfont">&#xe631;</i>
+		</a>
+	</div>
+	<!-- 返回顶部按钮结束 -->
+</body>
+</html>

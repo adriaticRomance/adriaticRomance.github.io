@@ -1,0 +1,16 @@
+@font-face {
+  font-family: 'iconfont';
+  src: url('fonts4/iconfont.eot');
+  src: url('fonts4/iconfont.eot?#iefix') format('embedded-opentype'),
+      url('fonts4/iconfont.woff2') format('woff2'),
+      url('fonts4/iconfont.woff') format('woff'),
+      url('fonts4/iconfont.ttf') format('truetype'),
+      url('fonts4/iconfont.svg#iconfont') format('svg');
+}
+  .iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }

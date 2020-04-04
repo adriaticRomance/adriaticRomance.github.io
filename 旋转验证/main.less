@@ -1,0 +1,83 @@
+html {
+  height: 100%;
+  body {
+    height: 100%;
+    background: skyblue;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .up {
+      width: 300px;
+      height: 300px;
+      position: relative;
+    //   outline: 1px solid gray;
+      .reload {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        height: 30px;
+        span {
+          color: white;
+          cursor: pointer;
+          user-select: none;
+        }
+      }
+    }
+    .down {
+      width: 300px;
+      height: 40px;
+      margin-top: 20px;
+      position: relative;
+      outline: 1px solid gray;
+      line-height: 40px;
+      text-align: center;
+      .mask {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: pink;
+        .slider {
+          position: relative;
+          top: 0;
+          width: 40px;
+          height: 40px;
+          transition: background 0.3s;
+          outline: 1px solid gray;
+          cursor: pointer;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          user-select: none;
+          .sliderIcon {
+            font-size: 20px;
+            cursor: pointer;
+            color: white;
+          }
+          .yes {
+            color: rgb(36, 128, 36);
+            transition: all 1.2s;
+            transform: scale(1.5);
+          }
+          .no {
+            color: rgb(226, 62, 62);
+            transition: all 1.2s;
+            transform: scale(1.5);
+          }
+        }
+        .slider:hover {
+          background: rgb(231, 56, 56);
+          color: white;
+        }
+      }
+      .sliderText {
+        user-select: none;
+      }
+    }
+  }
+}

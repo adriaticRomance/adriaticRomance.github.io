@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.js"></script>
+	<style type="text/css">
+		.box{
+			margin: 50px auto;
+			height: 500px;
+			width: 500px;
+			position: relative;
+		}
+		.box div{
+			width: 100%;
+			height: 100%;
+		}
+		.box input{
+			width: 100%;
+			height: 50px;
+			top: 400px;
+			position: absolute;
+		}
+		.box>div>img{
+			width: 100%;
+			height: 100%;
+		}
+		.box .after{
+			position: absolute;
+			top: 0;
+			left: 0;
+			overflow: hidden;
+			width: 50%;
+		}
+		.box .after img{
+			height: 500px;
+			width: 500px;
+		}
+		input[type='range'] {
+      		-webkit-appearance: none;
+      		width: 500px;
+      		height: 22px;
+      		border-radius: 10px;
+      		box-shadow: 0 0.125em 0.125em #3b4547;
+      		background: rgba(255,255,255,0.3);
+      		border-color: transparent;
+      	}
+      	input[type=range]:focus {
+  			outline: none;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div>
+			<img src="img/befor.jpg">
+			<div class="after">
+				<img src="img/after.jpg">
+			</div>
+		</div>
+		<input type="range" min="0" max="100" oninput="moveimg()" value="50" step="1">
+	</div>
+	<script type="text/javascript">
+		function moveimg(){
+			var val = $('.box>input').prop('value')
+			console.log(val)
+			$('.box>div>.after').css('width',val+'%')
+		}
+	</script>
+</body>
+</html>

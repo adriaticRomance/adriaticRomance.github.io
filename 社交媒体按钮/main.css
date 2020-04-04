@@ -1,0 +1,89 @@
+html {
+  /* width: 100%; */
+  height: 100%;
+}
+html body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* width: 100%; */
+  height: 100%;
+  background: #eeeeee;
+}
+html body .box {
+  width: 630px;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+html body .box .mBox {
+  height: 80px;
+  width: 80px;
+  background: #ffffff;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 0px 0px gray;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.63, -0.52, 0.74, 1.74);
+}
+html body .box .mBox span {
+  font-size: 36px;
+  cursor: pointer;
+  z-index: 1;
+}
+html body .box .mBox .g {
+  color: #dc4c3a;
+}
+html body .box .mBox .f {
+  color: #3d5b99;
+}
+html body .box .mBox .t {
+  color: #03b0f0;
+}
+html body .box .mBox .i {
+  color: #c003ff;
+}
+html body .box .mBox .p {
+  color: #cc0303;
+  font-weight: 700;
+}
+html body .box .mBox::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 30px;
+  left: -80px;
+  width: 100px;
+  height: 160px;
+  background: #dc4c3a;
+  z-index: 0;
+  transform: rotateZ(-45deg);
+}
+html body .box .mBox:hover::before {
+  transition: inherit;
+  top: -45px;
+  left: -18px;
+}
+html body .box .mBox:hover span {
+  color: white;
+  font-size: 40px;
+  transition: all 0.5s linear;
+}
+html body .box .fBox::before {
+  background: #3d5b99;
+}
+html body .box .tBox::before {
+  background: #03b0f0;
+}
+html body .box .iBox::before {
+  background: #c003ff;
+}
+html body .box .pBox::before {
+  background: #cc0303;
+}
+/*# sourceMappingURL=./main.css.map */

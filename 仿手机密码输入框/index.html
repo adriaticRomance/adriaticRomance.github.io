@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>手机密码输入</title>
+	<style type="text/css">
+		@font-face {
+  			font-family: 'iconfont';
+ 			src: url('fonts/iconfont.eot');
+ 			src: url('fonts/iconfont.eot?#iefix') format('embedded-opentype'),
+      		url('fonts/iconfont.woff2') format('woff2'),
+      		url('fonts/iconfont.woff') format('woff'),
+      		url('fonts/iconfont.ttf') format('truetype'),
+      		url('fonts/iconfont.svg#iconfont') format('svg');
+		}
+		.iconfont {
+  			font-family: "iconfont" !important;
+  			font-size: 16px;
+  			font-style: normal;
+  			-webkit-font-smoothing: antialiased;
+  			-moz-osx-font-smoothing: grayscale;
+		}
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box{
+			margin: 50px auto;
+			width: 500px;
+			height: 800px;
+			padding: 10px;
+			border: 1px solid black;
+			position: relative;
+		}
+		.buttom{
+			width: 500px;
+			height: 800px;
+			background: gray;
+			text-align: center;
+		}
+		.buttom .but{
+			padding-top: 30px;
+		}
+		.buttom .but button{
+			width: 100px;
+			height: 50px;
+		}
+		.top{
+			width: 500px;
+			height: 380px;
+			background: white;
+			border:1px solid #ededed;
+			position: absolute;
+			top: 428px;
+
+		}
+		.top .up{
+			height: 140px;
+			width: 100%;
+		}
+		.top .up .closeIcon{
+			height: 40px;
+			width: 100%;
+			line-height: 40px;
+		}
+		.top .up .closeIcon button{
+			width: 30px;
+			height: 30px;
+			margin-right: 10px;
+			margin-top: 10px;
+			float: right;
+			background: white;
+		}
+		.top .up .word{
+			height: 40px;
+			width: 100%;
+			text-align: center;
+			line-height: 40px;
+		}
+		.top .up .passsWord{
+			text-align: center;
+			line-height: 50px;
+			height: 50px;
+			width: 250px;
+			margin-left: 130px;
+
+		}
+		.top .up .passsWord .img{
+			float: left;
+			height: 28px;
+			width: 28px;
+			margin-left: 10px;
+			border:1px solid black;
+			text-align: center;
+			line-height: 28px;
+		}
+		.top .up .passsWord .img img{
+			margin-top: 3px;
+		}
+		.top .down{
+			width: 100%;
+			height: 240px;	
+		}
+		.top .down .inputButton{
+			width: 166px;
+			height: 58px;
+			float: left;
+			text-align: center;
+			line-height: 60px;
+		}
+		.top .down .inputButton button{
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="buttom">
+			<div class="but"><button id="opendBut">打开弹框</button></div>
+			<div class="but"><button id="closeBut">关闭弹框</button></div>
+			<div class="but"><button id="cleaerBut">清空密码</button></div>	
+		</div>
+		<div class="top" style="display: none" id="top">
+			<div class="up">
+				<div class="closeIcon"><button style="border: none" id="closeBut2"><span class="iconfont">&#xe608;</span></button></div>
+				<div class="word">您将支付30元，请输入支付密码</div>
+				<div class="passsWord">
+					<div class="img"><img src="img/point.jpg" style="display: none;" name="pointImg"></div>
+					<div class="img"><img src="img/point.jpg" style="display: none;" name="pointImg"></div>
+					<div class="img"><img src="img/point.jpg" style="display: none;" name="pointImg"></div>
+					<div class="img"><img src="img/point.jpg" style="display: none;" name="pointImg"></div>
+					<div class="img"><img src="img/point.jpg" style="display: none;" name="pointImg"></div>
+					<div class="img"><img src="img/point.jpg" style="display: none;" name="pointImg"></div>
+				</div>
+			</div>
+			<div class="down">
+				<div class="inputButton"><button name="inputBut">1</button></div>
+				<div class="inputButton"><button name="inputBut">2</button></div>
+				<div class="inputButton"><button name="inputBut">3</button></div>
+				<div class="inputButton"><button name="inputBut">4</button></div>
+				<div class="inputButton"><button name="inputBut">5</button></div>
+				<div class="inputButton"><button name="inputBut">6</button></div>
+				<div class="inputButton"><button name="inputBut">7</button></div>
+				<div class="inputButton"><button name="inputBut">8</button></div>
+				<div class="inputButton"><button name="inputBut">9</button></div>
+				<div class="inputButton"><button id="deleAll"><span class="iconfont">&#xe607;</span></button></div>
+				<div class="inputButton"><button name="inputBut">0</button></div>
+				<div class="inputButton"><button id="deleOne"><span class="iconfont">&#xe608;</span></button></div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		window.onload = function(){
+			var opendBut = document.getElementById('opendBut')
+			var closeBut = document.getElementById('closeBut')
+			var cleaerBut = document.getElementById('cleaerBut')
+			var closeBut2 = document.getElementById('closeBut2')
+			var pointImg = document.getElementsByName('pointImg')
+			var deleAll = document.getElementById('deleAll')
+			var deleOne = document.getElementById('deleOne')
+			var inputBut = document.getElementsByName('inputBut')
+			var top = document.getElementById('top')
+			var arr1 = new Array()
+			var arr2 = new Array()
+			var num = 1
+			var but = new But(opendBut,closeBut,cleaerBut,closeBut2,pointImg,deleAll,deleOne,top,inputBut,arr1,arr2,num)
+		}
+		function But(opendBut,closeBut,cleaerBut,closeBut2,pointImg,deleAll,deleOne,top,inputBut,arr1,arr2,num){
+			this.opendBut = opendBut
+			this.closeBut = closeBut
+			this.cleaerBut = cleaerBut
+			this.closeBut2 = closeBut2
+			this.pointImg = pointImg
+			this.deleAll = deleAll
+			this.deleOne = deleOne
+			this.top = top
+			this.inputBut = inputBut
+			this.init()
+			this.arr1 = arr1
+			this.arr2 = arr2
+			this.num = num
+		}
+		But.prototype.init = function(){
+			var that = this
+			this.opendBut.onclick = function(e){
+				that.opend(e)
+			}
+			this.closeBut.onclick = function(e){
+				that.close(e)
+			}
+			for(var i=0;i<10;i++){
+				this.inputBut[i].onclick = function(e){
+					that.input(e)
+				}
+			}
+			this.closeBut2.onclick = function(e){
+				that.close(e)
+			}
+			this.deleOne.onclick = function(e){
+				that.delectone(e)
+			}
+			this.deleAll.onclick = function(e){
+				that.delectAll(e)
+			}
+			this.cleaerBut.onclick = function(e){
+				that.delectAll(e)
+			}
+		}
+		But.prototype.opend = function(evt){
+			this.top.style.display = 'block'
+		}
+		But.prototype.close = function(evt){
+			this.top.style.display = 'none'
+		}
+		But.prototype.input = function(evt){	
+			this.arr1.splice(0,0,'block')
+			// var arrStr = JSON.stringify(this.arr1)
+			for(var i=0;i<(this.arr1.length);i++){
+				if(i<=5){
+					this.pointImg[i].style.display = this.arr1[i]
+				}
+			}
+		}
+		But.prototype.delectone = function(evt){	
+			var tt = this.arr1.length
+			this.arr1.splice((tt-1),this.num,'none')
+			this.num++
+			for(var i=0;i<(this.arr1.length);i++){
+					this.pointImg[i].style.display = this.arr1[i]
+			}
+		}
+		But.prototype.delectAll = function(evt){
+
+			for(var i=0;i<6;i++){
+				this.pointImg[i].style.display = 'none'
+			}
+			this.arr1.splice(0,(this.arr1.length))
+		}
+	</script>
+</body>
+</html>
