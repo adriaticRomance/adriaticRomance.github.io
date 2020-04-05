@@ -1,0 +1,390 @@
+html {
+  width: 100%;
+  height: 100%;
+  body {
+    width: 100%;
+    height: 100%;
+    background: #24292e;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    .hover {
+      width: 100%;
+      height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      button {
+        transition: all 1.5s;
+        border: 2px solid gray;
+        height: 50px;
+        width: 100px;
+        font-size: 16px;
+        margin: 10px;
+        font-weight: 550;
+        border-radius: 5px;
+        position: relative;
+        overflow: hidden;
+        background: none;
+        color: white;
+      }
+      button::before {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: pink;
+        width: 100%;
+        height: 10%;
+        z-index: -1;
+        transform: rotateY(90deg);
+        transition: all 1.5s;
+      }
+      button:hover::before {
+        transform: rotateY(0deg);
+      }
+      .xxxx::before {
+        height: 100%;
+        border-radius: 50%;
+        transform: scale(0);
+      }
+      .xxxx:hover::before {
+        transform: scale(2);
+      }
+      .yyyy::before {
+        height: 100%;
+        transform: rotateZ(15deg) rotateX(90deg) scale(2);
+      }
+      .yyyy:hover::before {
+        transform: rotateZ(15deg) rotateX(0deg) scale(2);
+      }
+      .zzzz::before {
+        height: 100%;
+        transform-origin: 0 100%;
+        transform: scaleX(0);
+      }
+      .zzzz:hover::before {
+        transform: scaleX(1);
+      }
+      .aaaa::before {
+        height: 100%;
+        transform-origin: 100% 0;
+        transform: scaleX(0);
+      }
+      .aaaa:hover::before {
+        transform: scaleX(1);
+      }
+      .bbbb::before {
+        height: 100%;
+        transform-origin: 0 0;
+        transform: scaleY(0);
+      }
+      .bbbb:hover::before {
+        transform: scaleY(1);
+      }
+      .cccc::before {
+        height: 100%;
+        transform-origin: 0 100%;
+        transform: scaleY(0);
+      }
+      .cccc:hover::before {
+        transform: scaleY(1);
+      }
+      .dddd::before {
+        transform-origin: 0 0;
+      }
+      .eeee::before {
+        height: 100%;
+        transform: scale(2);
+      }
+      .eeee:hover::before {
+        transform: scale(0);
+      }
+      .eeee:hover {
+        color: pink;
+      }
+      .ffff::before {
+        height: 100%;
+        transform: none;
+      }
+      .ffff:hover {
+        background: white;
+        color: pink;
+      }
+    }
+    .button {
+      width: 100%;
+      //   height: 200px;
+      .title {
+        color: white;
+        margin: 0 auto;
+        width: 200px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+      }
+      .shak {
+        margin: 20px auto;
+        width: 120px;
+        height: 60px;
+        button {
+          width: 100%;
+          height: 100%;
+          font-size: 20px;
+          font-weight: 550;
+          border: 2px solid gray;
+          border-radius: 5px;
+          transform-origin: 50% 0;
+        }
+        button:hover {
+          animation-name: skew;
+          animation-duration: 1.2s;
+          animation-timing-function: linear;
+        }
+      }
+      .Croclo {
+        margin: 20px auto;
+        width: 120px;
+        height: 300px;
+      }
+      .Bubble {
+        width: 100%;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        button {
+          width: 240px;
+          height: 87px;
+          background: lightgreen;
+          color: white;
+          border: none;
+          outline: none;
+          font-size: 24px;
+          z-index: 0;
+          overflow: hidden;
+          position: relative;
+        }
+        button:hover {
+          transition: all 1.5s;
+        }
+        button::before {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: skyblue;
+          z-index: -2;
+          transition: inherit;
+        }
+
+        button::after {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          /* background: transparent; */
+          background-image: radial-gradient(
+              circle at 5% 75%,
+              transparent 2.5%,
+              white 4%,
+              transparent 4.5%
+            ),
+            radial-gradient(
+              circle at 30% 95%,
+              transparent 2%,
+              white 3%,
+              transparent 3.5%
+            ),
+            radial-gradient(
+              circle at 25% 85%,
+              transparent 0.5%,
+              white 2%,
+              transparent 2.5%
+            ),
+            radial-gradient(
+              circle at 10% 65%,
+              transparent 1.5%,
+              white 2.5%,
+              transparent 3%
+            ),
+            radial-gradient(
+              circle at 45% 55%,
+              transparent 0.5%,
+              white 1.5%,
+              transparent 2%
+            ),
+            radial-gradient(
+              circle at 45% 75%,
+              transparent 1.5%,
+              white 2.5%,
+              transparent 3%
+            );
+          z-index: -1;
+          background-repeat: no-repeat;
+          background-size: 200% 200%;
+          transition: inherit;
+        }
+        button:hover::after {
+          background-position: 0 -100px, 5px -120px, 10px -160px, 0px -150px,
+            20px -170px, 5px -110px;
+          opacity: 0;
+        }
+        button:hover::before {
+          top: 0%;
+        }
+      }
+      button {
+        width: 100%;
+        height: 60px;
+        font-size: 20px;
+        font-weight: 550;
+        border: 2px solid gray;
+        border-radius: 5px;
+        position: relative;
+        z-index: 0;
+        left: 0;
+        top: 0;
+        overflow: hidden;
+        margin: 15px auto;
+        span {
+          display: block;
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          background: orangered;
+          z-index: -1;
+          transform: scale(0);
+          pointer-events: none;
+          transition: transform 1.5s;
+        }
+      }
+      button:hover {
+        span {
+          transform: scale(30);
+        }
+      }
+    }
+    .souic {
+      margin-top: 30px;
+      width: 50%;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .mBox {
+        height: 80px;
+        width: 80px;
+        background: #ffffff;
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        position: relative;
+        box-shadow: 0px 0px gray;
+        overflow: hidden;
+        transition: all 0.5s cubic-bezier(0.63, -0.52, 0.74, 1.74);
+        span {
+          font-size: 36px;
+          cursor: pointer;
+          z-index: 1;
+        }
+        .g {
+          color: #dc4c3a;
+        }
+        .f {
+          color: #3d5b99;
+        }
+        .t {
+          color: #03b0f0;
+        }
+        .i {
+          color: #c003ff;
+        }
+        .p {
+          color: #cc0303;
+          font-weight: 700;
+        }
+      }
+      .mBox::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 30px;
+        left: -80px;
+        width: 100px;
+        height: 160px;
+        background: #dc4c3a;
+        z-index: 0;
+        transform: rotateZ(-45deg);
+      }
+      .mBox:hover::before {
+        transition: inherit;
+        top: -45px;
+        left: -18px;
+      }
+      .mBox:hover span {
+        color: white;
+        font-size: 40px;
+        transition: all 0.5s linear;
+      }
+      .fBox::before {
+        background: #3d5b99;
+      }
+      .tBox::before {
+        background: #03b0f0;
+      }
+      .iBox::before {
+        background: #c003ff;
+      }
+      .pBox::before {
+        background: #cc0303;
+      }
+    }
+  }
+}
+@keyframes skew {
+  0% {
+    transform: skew(0deg);
+  }
+  10% {
+    transform: skew(-15deg);
+  }
+
+  30% {
+    transform: skew(10deg);
+  }
+
+  50% {
+    transform: skew(-8deg);
+  }
+
+  70% {
+    transform: skew(6deg);
+  }
+
+  90% {
+    transform: skew(-3deg);
+  }
+
+  20% {
+    transform: skew(0deg);
+  }
+}

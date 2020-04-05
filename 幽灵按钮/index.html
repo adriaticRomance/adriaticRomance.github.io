@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>幽灵按钮</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        @font-face {
+            font-family: 'iconfont';
+            src: url('fonts/iconfont.eot');
+            src: url('fonts/iconfont.eot?#iefix') format('embedded-opentype'),
+                url('fonts/iconfont.woff2') format('woff2'),
+                url('fonts/iconfont.woff') format('woff'),
+                url('fonts/iconfont.ttf') format('truetype'),
+                url('fonts/iconfont.svg#iconfont') format('svg');
+        }
+
+        .iconfont {
+            font-family: "iconfont" !important;
+            font-size: 16px;
+            font-style: normal;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hover">
+        <button class="oooo">hover按钮</button>
+        <button class="xxxx">hover按钮</button>
+        <button class="yyyy">hover按钮</button>
+        <button class="zzzz">hover按钮</button>
+        <button class="aaaa">hover按钮</button>
+        <button class="bbbb">hover按钮</button>
+        <button class="cccc">hover按钮</button>
+        <button class="dddd">hover按钮</button>
+        <button class="eeee">hover按钮</button>
+        <button class="ffff">hover按钮</button>
+    </div>
+    <div class="button">
+        <div class="title">
+            <p>悬挂牌按钮晃动特效</p>
+        </div>
+        <div class="shak">
+            <button>
+                but
+            </button>
+        </div>
+        <div class="title">
+            <p>渐大圆按钮特效</p>
+        </div>
+        <div class="Croclo">
+            <button class="but">
+                <span></span>
+                but
+            </button>
+            <button class="but">
+                <span></span>
+                but
+            </button>
+            <button class="but">
+                <span></span>
+                but
+            </button>
+        </div>
+        <div class="title">
+            <p>冒泡按钮特效</p>
+        </div>
+        <div class="Bubble">
+            <button>
+                Bubble Button
+            </button>
+        </div>
+    </div>
+    <div class="souic">
+        <div class="mBox gBox"><span class="iconfont g">&#xe668;</span></div>
+        <div class="mBox fBox"><span class="iconfont f">&#xe63a;</span></div>
+        <div class="mBox tBox"><span class="iconfont t">&#xe736;</span></div>
+        <div class="mBox iBox"><span class="iconfont i">&#xe74a;</span></div>
+        <div class="mBox pBox"><span class="iconfont p">&#xea25;</span></div>
+    </div>
+</body>
+
+<script>
+    var buts = document.querySelectorAll('.but')
+    // var span = document.querySelector('button span')
+    buts.forEach(function (but) {
+        but.onmousemove = function (event) {
+            // console.log(event.offsetX, event.offsetY)
+            this.querySelector('span').style.left = event.offsetX + 'px';
+            this.querySelector('span').style.top = event.offsetY + 'px';
+        }
+    })
+</script>
+
+</html>
