@@ -1,0 +1,60 @@
+html {
+  width: 100%;
+  height: 100%;
+}
+html body {
+  width: 100%;
+  height: 100%;
+}
+html body .head .navbar {
+  padding: 0 200px;
+}
+html body .head .navbar .container-fluid .collapse .leftNav li a {
+  color: gray;
+  font-size: 16px;
+}
+html body .head .navbar .container-fluid .collapse .leftNav li a:hover {
+  color: #f22e00;
+}
+html body .head .navbar .container-fluid .collapse .leftNav li:first-child a {
+  color: black;
+  font-size: 16px;
+}
+html body .head .navbar .container-fluid .collapse .leftNav li:nth-child(2) a {
+  color: #f22e00;
+}
+html body .head .navbar .container-fluid .collapse .rightNav li .iconSpan {
+  margin-right: 10px;
+}
+html body .head .navbar .container-fluid .collapse .rightNav li .lightor {
+  color: #f22e00;
+}
+html body .head .navbar .container-fluid .collapse .rightNav li a {
+  color: gray;
+  font-size: 16px;
+}
+html body .head .navbar .container-fluid .collapse .rightNav li a:hover {
+  color: #f22e00;
+}
+html body .serachBox {
+  width: 100%;
+  height: 90px;
+  border-bottom: 1px dotted #f22e00;
+}
+html body .serachBox .sherachb {
+  width: 75%;
+  height: 100%;
+  margin: 0 auto;
+}
+html body .serachBox .sherachb div {
+  height: 100%;
+}
+html body .serachBox .sherachb .rightSbox a {
+  border-right: 1px solid #f1f1f1;
+  padding: 0 30px;
+}
+html body .serachBox .sherachb .rightSbox a img {
+  width: 100%;
+  height: 100%;
+}
+/*# sourceMappingURL=./index.css.map */

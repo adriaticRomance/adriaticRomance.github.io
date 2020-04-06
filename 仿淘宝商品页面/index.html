@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>仿淘宝商品页面</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style>
+        @font-face {
+            font-family: 'iconfont';
+            src: url('fonts/iconfont.eot');
+            src: url('fonts/iconfont.eot?#iefix') format('embedded-opentype'),
+                url('fonts/iconfont.woff2') format('woff2'),
+                url('fonts/iconfont.woff') format('woff'),
+                url('fonts/iconfont.ttf') format('truetype'),
+                url('fonts/iconfont.svg#iconfont') format('svg');
+        }
+
+        .iconfont {
+            font-family: "iconfont" !important;
+            font-size: 16px;
+            font-style: normal;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="head">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav leftNav">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                aria-haspopup="true" aria-expanded="false">中国大陆 <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">全球</a></li>
+                                <li><a href="#">中国大陆</a></li>
+                                <li><a href="#">中国香港</a></li>
+                                <li><a href="#">中国台湾</a></li>
+                                <li><a href="#">中国澳门</a></li>
+                                <li><a href="#">韩国</a></li>
+                                <li><a href="#">马来西亚</a></li>
+                                <li><a href="#">澳大利亚</a></li>
+                                <li><a href="#">新加坡</a></li>
+                                <li><a href="#">新西兰</a></li>
+                                <li><a href="#">加拿大</a></li>
+                                <li><a href="#">美国</a></li>
+                                <li><a href="#">日本</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">亲，请登录</a></li>
+                        <li><a href="#">免费注册</a></li>
+                        <li><a href="#">手机逛淘宝</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right rightNav">
+                        <li><a href="#">淘宝网首页</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                aria-haspopup="true" aria-expanded="false">我的淘宝 <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">已买到的宝贝</a></li>
+                                <li><a href="#">我的足迹</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                aria-haspopup="true" aria-expanded="false"><span
+                                    class="iconfont iconSpan lightor">&#xe60e;</span>购物车 <span class="caret"></span></a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                aria-haspopup="true" aria-expanded="false"><span
+                                    class="iconfont iconSpan">&#xe670;</span>我的收藏 <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">收藏的宝贝</a></li>
+                                <li><a href="#">收藏的店铺</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">商品分类</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                aria-haspopup="true" aria-expanded="false">卖家中心 <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">免费开店</a></li>
+                                <li><a href="#">已卖出的宝贝</a></li>
+                                <li><a href="#">出售中的宝贝</a></li>
+                                <li><a href="#">卖家服务市场</a></li>
+                                <li><a href="#">卖家培训中心</a></li>
+                                <li><a href="#">体检中心</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                aria-haspopup="true" aria-expanded="false">联系客服 <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">消费者客服</a></li>
+                                <li><a href="#">卖家客服</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                aria-haspopup="true" aria-expanded="false"><span
+                                    class="iconfont iconSpan lightor">&#xe6a0;</span>网站导航 <span
+                                    class="caret"></span></a>
+                            <ul class="dropdownmenu">
+
+                            </ul>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+    </div>
+    <div class="serachBox">
+        <div class="row sherachb">
+            <div class="col-md-6 rightSbox">
+                <a class="navbar-brand" href="#">
+                    <img alt="Brand" src="https://img.alicdn.com/tps/i3/TB1XIwGHFXXXXcBXFXXLZDx_pXX-107-44.png">
+                  </a>
+                  <div class="title">
+                      
+                  </div>
+            </div>
+            <div class="col-md-6 leftSbox"></div>
+        </div>
+    </div>
+
+    <div class="bodyBox">
+        <div class="leftBox">
+
+        </div>
+        <div class="rightBox"></div>
+    </div>
+
+</body>
+<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+
+</html>
