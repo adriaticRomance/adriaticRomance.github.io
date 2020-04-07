@@ -49,6 +49,10 @@ html body .serachBox .sherachb {
 html body .serachBox .sherachb div {
   height: 100%;
 }
+html body .serachBox .sherachb .rightSbox {
+  display: flex;
+  align-items: flex-start;
+}
 html body .serachBox .sherachb .rightSbox a {
   border-right: 1px solid #f1f1f1;
   padding: 0 30px;
@@ -56,5 +60,195 @@ html body .serachBox .sherachb .rightSbox a {
 html body .serachBox .sherachb .rightSbox a img {
   width: 100%;
   height: 100%;
+}
+html body .serachBox .sherachb .rightSbox .title {
+  width: 200px;
+  height: 50px;
+  margin-left: 15px;
+  border-right: 1px solid #f1f1f1;
+}
+html body .serachBox .sherachb .rightSbox .title div {
+  width: 100%;
+  height: 25px;
+  border: none;
+}
+html body .serachBox .sherachb .rightSbox .title .tup {
+  border: none;
+  display: flex;
+  justify-content: start;
+}
+html body .serachBox .sherachb .rightSbox .title .tup a {
+  flex: 1;
+  border: none;
+  text-decoration: none;
+  color: #333333;
+  font-size: 16px;
+  font-weight: 550;
+  margin: 0;
+  padding: 0;
+}
+html body .serachBox .sherachb .rightSbox .title .tup span {
+  flex: 1;
+  border: none;
+  margin-left: 5px;
+}
+html body .serachBox .sherachb .rightSbox .title .tup span a {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-left: 5px;
+  background: url(img/icon.png) -259px 0 no-repeat;
+}
+html body .serachBox .sherachb .rightSbox .title .tup span .biaozhi-1 {
+  background-position: -837px 0;
+}
+html body .serachBox .sherachb .rightSbox .title .tdown {
+  width: 50px;
+  margin-top: 5px;
+}
+html body .serachBox .sherachb .rightSbox .title .tdown div {
+  width: 16px;
+  height: 16px;
+  background: url(img/huangg.gif) no-repeat;
+  float: left;
+  margin-right: 5px;
+}
+html body .serachBox .sherachb .rightSbox .title .tdown .iconms2 {
+  background: url(img/contect.gif) no-repeat;
+  background-position: -83px -4px;
+}
+html body .serachBox .sherachb .rightSbox .sever {
+  width: 200px;
+  height: 50px;
+  margin-left: 15px;
+}
+html body .serachBox .sherachb .rightSbox .sever div {
+  width: 100%;
+  height: 50%;
+}
+html body .serachBox .sherachb .rightSbox .sever .sup {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+html body .serachBox .sherachb .rightSbox .sever .sup div {
+  flex: 1;
+  float: left;
+  text-align: center;
+  font-size: 16px;
+}
+html body .serachBox .sherachb .rightSbox .sever .sdown {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+html body .serachBox .sherachb .rightSbox .sever .sdown div {
+  text-align: center;
+  line-height: 25px;
+}
+html body .serachBox .sherachb .rightSbox .sever .sdown div span {
+  display: inline-block;
+  width: 9px;
+  height: 14px;
+  background: url(img/arow.png) no-repeat;
+  background-position: -6px -5px;
+}
+html body .serachBox .sherachb .leftSbox {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  position: relative;
+}
+html body .serachBox .sherachb .leftSbox .inputserch {
+  width: 450px;
+  height: 50px;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  justify-content: start;
+  align-items: flex-start;
+  border: 2px solid #ff4400;
+  background: #ff4400;
+}
+html body .serachBox .sherachb .leftSbox .inputserch input {
+  height: 100%;
+  width: 80%;
+  border: none;
+  margin: 0;
+  text-indent: 5px;
+  font-size: 20px;
+  padding: 0;
+}
+html body .serachBox .sherachb .leftSbox .inputserch span {
+  height: 100%;
+  width: 20%;
+  padding: 0;
+  margin: 0;
+  border: none !important;
+}
+html body .serachBox .sherachb .leftSbox .inputserch span button {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  border: none !important;
+  background: #ff4400;
+  color: white;
+  font-size: 16px;
+}
+html body .serachBox .sherachb .leftSbox .inputserch span button:hover {
+  background: #f22b00;
+}
+html body .serachBox .sherachb .leftSbox .buttonsb {
+  width: 90px;
+  height: 50px;
+  margin-left: 10px;
+}
+html body .serachBox .sherachb .leftSbox .buttonsb button {
+  width: 100%;
+  height: 100%;
+  background: #ffe4d0;
+  border: none;
+  outline: 1px solid #ffb086;
+  color: #ff4400;
+  font-size: 16px;
+}
+html body .serachBox .sherachb .leftSbox .buttonsb button:hover {
+  background: #ffd9b3;
+}
+html body .serachBox .sherachb .leftSbox .qrcode {
+  position: absolute;
+  width: 260px;
+  height: 30px;
+  bottom: 0;
+  right: 10px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  font-size: 16px;
+}
+html body .serachBox .sherachb .leftSbox .qrcode div {
+  margin-right: 20px;
+}
+html body .serachBox .sherachb .leftSbox .qrcode div .staricon {
+  font-size: 16px;
+  color: #3c3c3c;
+  user-select: none;
+  cursor: pointer;
+}
+html body .serachBox .sherachb .leftSbox .qrcode div .staricon2 {
+  font-size: 16px;
+  color: #9a9a9a;
+  user-select: none;
+  cursor: pointer;
+}
+html body .serachBox .sherachb .leftSbox .qrcode .qrright {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  position: relative;
+}
+html body .serachBox .sherachb .leftSbox .qrcode .qrright p {
+  margin-left: 5px;
 }
 /*# sourceMappingURL=./index.css.map */
