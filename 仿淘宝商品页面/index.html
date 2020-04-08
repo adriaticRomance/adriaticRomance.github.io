@@ -170,7 +170,7 @@
                     </div>
                     <div class="qrright">
                         <span class="iconfont staricon2">&#xe501;</span>
-                        <p>用手机逛本店</p> 
+                        <p>用手机逛本店</p>
                     </div>
                 </div>
             </div>
@@ -179,10 +179,29 @@
 
     <div class="bodyBox">
         <div class="leftBox">
+            <div class="stage">
+                <img class="original" src="img/1.jpg" alt="" />
+                <div class="mask"></div>
+            </div>
+            <ul class="list">
+                <li class="active"><img src="img/1.jpg" alt="" /></li>
+                <li><img src="img/2.jpg" alt="" /></li>
+                <li><img src="img/3.jpg" alt="" /></li>
+                <li><img src="img/4.png" alt="" /></li>
+                <li><img src="img/5.jpg" alt="" /></li>
+            </ul>
 
-            
+            <div class="zoom"></div>
+            <select class="level" name="" id="">
+                <option value="2">2倍</option>
+                <option value="3">3倍</option>
+                <option value="4">4倍</option>
+                <option value="5">5倍</option>
+            </select>
         </div>
-        <div class="rightBox"></div>
+        <div class="rightBox">
+
+        </div>
     </div>
 
 </body>
@@ -190,5 +209,76 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
 <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+<script>
+    // console.log($(".zoom"));
+    // console.log($(".mask"));
+    
+    $(".level").change(function () {
+        var level = Number($(this).val());
+
+        var w = $(".leftBox").width();
+        var h = $(".leftBox").height();
+        var mw = w / level;
+        var mh = h / level;
+        // console.log(level);
+        
+        $(".mask").css({
+            width: mw + "px",
+            height: mh + "px"
+        });
+
+        $(".zoom").css({
+            "background-image": "url(" + $(".original").attr("src") + ")",
+            "background-size": level + "00% auto"
+        });
+
+        $("ul.list li").click(function (e) {
+            $(this)
+                .addClass("active")
+                .siblings()
+                .removeClass("active");
+            $(".original").attr(
+                "src",
+                $(this)
+                    .find("img")
+                    .attr("src")
+            );
+            $(".zoom").css("background-image", "url(" + $(".original").attr("src") + ")");
+        });
+
+        $(".stage").hover(
+            function () {
+                $(".zoom").show();
+            },
+            function () {
+                $(".zoom").hide();
+            }
+        );
+        $(".stage").mousemove(function (event) {
+            // stage 里面有两个元素 offsetX某个元素上的偏移
+            // console.log(event.offsetX, event.offsetY);
+            var x = event.pageX - $(".stage").offset().left;
+            var y = event.pageY - $(".stage").offset().top;
+            // console.log(x, y);
+
+            // 限制范围
+            x = x > w - mw / 2 ? w - mw / 2 : x;
+            x = x < mw / 2 ? mw / 2 : x;
+            y = y > h - mh / 2 ? h - mh / 2 : y;
+            y = y < mh / 2 ? mh / 2 : y;
+
+            // 修正鼠标居中
+            $(".mask").css({
+                top: y - mh / 2,
+                left: x - mw / 2
+            });
+            $(".zoom").css({
+                "background-position-x": (x - mw / 2) * -level,
+                "background-position-y": (y - mh / 2) * -level
+            });
+        });
+    });
+    $(".level").change()
+</script>
 
 </html>

@@ -251,4 +251,77 @@ html body .serachBox .sherachb .leftSbox .qrcode .qrright {
 html body .serachBox .sherachb .leftSbox .qrcode .qrright p {
   margin-left: 5px;
 }
+html body .bodyBox {
+  border: 1px solid #e8e8e8;
+  height: 600px;
+  padding: 30px;
+  width: 75%;
+  margin: 0 auto;
+  position: relative;
+}
+html body .bodyBox .leftBox {
+  width: 400px;
+  height: 400px;
+  position: relative;
+}
+html body .bodyBox .leftBox .stage {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  cursor: crosshair;
+  overflow: hidden;
+}
+html body .bodyBox .leftBox .stage .original {
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+}
+html body .bodyBox .leftBox .stage .mask {
+  background: rgba(99, 74, 240, 0.7);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+html body .bodyBox .leftBox ul.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+html body .bodyBox .leftBox ul.list li {
+  width: 18%;
+  float: left;
+  margin-right: 2.5%;
+  margin-top: 2.5%;
+  border: 2px solid white;
+  padding: 2px;
+  box-sizing: border-box;
+  user-select: none;
+}
+html body .bodyBox .leftBox ul.list li img {
+  max-width: 100%;
+  max-height: 100%;
+  vertical-align: middle;
+}
+html body .bodyBox .leftBox ul.list li:last-child {
+  margin-right: 0;
+}
+html body .bodyBox .leftBox ul.list .active {
+  border-color: #ff5112;
+}
+html body .bodyBox .leftBox .zoom {
+  width: 400px;
+  height: 400px;
+  background-position-x: 0px;
+  background-position-y: 0px;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 410px;
+}
+html body .bodyBox .leftBox .level {
+  margin-top: 10px;
+  width: 80px;
+  height: 30px;
+  float: right;
+}
 /*# sourceMappingURL=./index.css.map */
