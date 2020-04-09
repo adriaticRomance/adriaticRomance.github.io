@@ -325,17 +325,188 @@ html {
           position: absolute;
           top: 0;
           left: 410px;
+          z-index: 10;
         }
-        .level{
+        .level {
           margin-top: 10px;
           width: 80px;
           height: 30px;
           float: right;
         }
       }
+      .rightBox {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        width: 65%;
+        // border: 1px solid gray;
+        .upInfor {
+          border-bottom: 1px dotted #d9d9d9;
+          .topInfor {
+            p {
+              font-size: 22px;
+              font-weight: 550;
+            }
+          }
+          .midleInfor {
+            width: 100%;
+            height: 168px;
+            margin-top: 20px;
+            .shang {
+              background: #fff2e8;
+              height: 50%;
+              width: 100%;
+              .shangs {
+                width: 100%;
+                height: 50%;
+                display: flex;
+                justify-content: start;
+                padding: 5px;
+                .nuberBox {
+                  height: 100%;
+                  width: 100%;
+                  font-size: 20px;
+                  text-align: center;
+                }
+                .qwe {
+                  flex: 1;
+                  line-height: 42px;
+                }
+                .qwe2 {
+                  flex: 7;
+                  text-align: left;
+                  line-height: 42px;
+                }
+                .qwe3 {
+                  flex: 1;
+                  font-size: 16px;
+                  border-right: 2px dotted #ffe4d0;
+                }
+                .qwe4 {
+                  flex: 1;
+                  font-size: 16px;
+                }
+              }
+              .xiax {
+                height: 50%;
+                width: 100%;
+                display: flex;
+                justify-content: start;
+              }
+              .nuberBox {
+                font-size: 20px;
+              }
+              .asd {
+                flex: 1;
+                text-align: center;
+                line-height: 42px;
+              }
+              .asd2 {
+                flex: 7;
+                font-size: 34px;
+                font-weight: 700;
+                color: #ff4400;
+                letter-spacing: 10;
+              }
+              .asd3 {
+                flex: 2;
+                padding: 10px;
+                .tuijian {
+                  width: 90px;
+                  height: 28px;
+                  background: #ff8e1b;
+                  font-size: 18px;
+                  color: white;
+                  text-align: center;
+                  line-height: 28px;
+                }
+              }
+            }
+            .xia {
+              width: 100%;
+              height: 50%;
+              background: #fff9f5;
+              display: flex;
+              justify-content: start;
+              div {
+                height: 100%;
+                width: 100%;
+              }
+              .lefttitle {
+                flex: 1;
+                font-size: 20px;
+                text-align: center;
+                line-height: 84px;
+              }
+              .righttitle {
+                flex: 9;
+                display: flex;
+                align-items: flex-start;
+                flex-wrap: wrap;
+
+                div {
+                  height: 33%;
+                  width: 100%;
+                  font-size: 18px;
+                  img{
+                    margin-right: 5px;
+                  }
+                  a {
+                    text-decoration: none;
+                    color: #ff4400;
+                    margin-left: 10px;
+                    span {
+                      border-bottom: 1px dotted #ff4400;
+                      letter-spacing: 5;
+                    }
+                  }
+                }
+              }
+            }
+          }
+          .bottomInfor{
+            width: 100%;
+            height: 70px;
+            // padding: 10px;
+            display: flex;
+            justify-content: start;
+            .leftbi{
+              flex: 1;
+              text-align: center;
+              line-height: 70px;
+              font-size: 20px;
+            }
+            .rightbi{
+              flex: 9;
+              display: flex;
+              font-size: 20px;
+              align-items: center;
+              div{
+                margin-left: 10px;
+                border: none;
+                button{
+                  border: none;
+                  border-radius: 0;
+                  
+                }
+                button:hover{
+                  background: #ffefe4;
+                  border: 1px solid #ff5002;
+                  color: #ff5002;
+                }
+              }
+            }
+          }
+        }
+      }
       width: 75%;
-      margin: 0 auto;
+      margin: 30px auto;
       position: relative;
+    }
+    .midletitleBox {
+      width: 100%;
+      background: url(img/backgroundTitle.png);
+      height: 150px;
     }
   }
 }

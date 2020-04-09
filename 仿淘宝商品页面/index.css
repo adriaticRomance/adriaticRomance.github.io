@@ -256,7 +256,7 @@ html body .bodyBox {
   height: 600px;
   padding: 30px;
   width: 75%;
-  margin: 0 auto;
+  margin: 30px auto;
   position: relative;
 }
 html body .bodyBox .leftBox {
@@ -317,11 +317,176 @@ html body .bodyBox .leftBox .zoom {
   position: absolute;
   top: 0;
   left: 410px;
+  z-index: 10;
 }
 html body .bodyBox .leftBox .level {
   margin-top: 10px;
   width: 80px;
   height: 30px;
   float: right;
+}
+html body .bodyBox .rightBox {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width: 65%;
+}
+html body .bodyBox .rightBox .upInfor {
+  border-bottom: 1px dotted #d9d9d9;
+}
+html body .bodyBox .rightBox .upInfor .topInfor p {
+  font-size: 22px;
+  font-weight: 550;
+}
+html body .bodyBox .rightBox .upInfor .midleInfor {
+  width: 100%;
+  height: 168px;
+  margin-top: 20px;
+}
+html body .bodyBox .rightBox .upInfor .midleInfor .shang {
+  background: #fff2e8;
+  height: 50%;
+  width: 100%;
+}
+html body .bodyBox .rightBox .upInfor .midleInfor .shang .shangs {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: start;
+  padding: 5px;
+}
+html body .bodyBox .rightBox .upInfor .midleInfor .shang .shangs .nuberBox {
+  height: 100%;
+  width: 100%;
+  font-size: 20px;
+  text-align: center;
+}
+html body .bodyBox .rightBox .upInfor .midleInfor .shang .shangs .qwe {
+  flex: 1;
+  line-height: 42px;
+}
+html body .bodyBox .rightBox .upInfor .midleInfor .shang .shangs .qwe2 {
+  flex: 7;
+  text-align: left;
+  line-height: 42px;
+}
+html body .bodyBox .rightBox .upInfor .midleInfor .shang .shangs .qwe3 {
+  flex: 1;
+  font-size: 16px;
+  border-right: 2px dotted #ffe4d0;
+}
+html body .bodyBox .rightBox .upInfor .midleInfor .shang .shangs .qwe4 {
+  flex: 1;
+  font-size: 16px;
+}
+html body .bodyBox .rightBox .upInfor .midleInfor .shang .xiax {
+  height: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: start;
+}
+html body .bodyBox .rightBox .upInfor .midleInfor .shang .nuberBox {
+  font-size: 20px;
+}
+html body .bodyBox .rightBox .upInfor .midleInfor .shang .asd {
+  flex: 1;
+  text-align: center;
+  line-height: 42px;
+}
+html body .bodyBox .rightBox .upInfor .midleInfor .shang .asd2 {
+  flex: 7;
+  font-size: 34px;
+  font-weight: 700;
+  color: #ff4400;
+  letter-spacing: 10;
+}
+html body .bodyBox .rightBox .upInfor .midleInfor .shang .asd3 {
+  flex: 2;
+  padding: 10px;
+}
+html body .bodyBox .rightBox .upInfor .midleInfor .shang .asd3 .tuijian {
+  width: 90px;
+  height: 28px;
+  background: #ff8e1b;
+  font-size: 18px;
+  color: white;
+  text-align: center;
+  line-height: 28px;
+}
+html body .bodyBox .rightBox .upInfor .midleInfor .xia {
+  width: 100%;
+  height: 50%;
+  background: #fff9f5;
+  display: flex;
+  justify-content: start;
+}
+html body .bodyBox .rightBox .upInfor .midleInfor .xia div {
+  height: 100%;
+  width: 100%;
+}
+html body .bodyBox .rightBox .upInfor .midleInfor .xia .lefttitle {
+  flex: 1;
+  font-size: 20px;
+  text-align: center;
+  line-height: 84px;
+}
+html body .bodyBox .rightBox .upInfor .midleInfor .xia .righttitle {
+  flex: 9;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+html body .bodyBox .rightBox .upInfor .midleInfor .xia .righttitle div {
+  height: 33%;
+  width: 100%;
+  font-size: 18px;
+}
+html body .bodyBox .rightBox .upInfor .midleInfor .xia .righttitle div img {
+  margin-right: 5px;
+}
+html body .bodyBox .rightBox .upInfor .midleInfor .xia .righttitle div a {
+  text-decoration: none;
+  color: #ff4400;
+  margin-left: 10px;
+}
+html body .bodyBox .rightBox .upInfor .midleInfor .xia .righttitle div a span {
+  border-bottom: 1px dotted #ff4400;
+  letter-spacing: 5;
+}
+html body .bodyBox .rightBox .upInfor .bottomInfor {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: start;
+}
+html body .bodyBox .rightBox .upInfor .bottomInfor .leftbi {
+  flex: 1;
+  text-align: center;
+  line-height: 70px;
+  font-size: 20px;
+}
+html body .bodyBox .rightBox .upInfor .bottomInfor .rightbi {
+  flex: 9;
+  display: flex;
+  font-size: 20px;
+  align-items: center;
+}
+html body .bodyBox .rightBox .upInfor .bottomInfor .rightbi div {
+  margin-left: 10px;
+  border: none;
+}
+html body .bodyBox .rightBox .upInfor .bottomInfor .rightbi div button {
+  border: none;
+  border-radius: 0;
+}
+html body .bodyBox .rightBox .upInfor .bottomInfor .rightbi div button:hover {
+  background: #ffefe4;
+  border: 1px solid #ff5002;
+  color: #ff5002;
+}
+html body .midletitleBox {
+  width: 100%;
+  background: url(img/backgroundTitle.png);
+  height: 150px;
 }
 /*# sourceMappingURL=./index.css.map */
