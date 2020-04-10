@@ -281,7 +281,40 @@
                     </div>
                 </div>
             </div>
-            <div class="downselect"></div>
+            <div class="downselect">
+                <div id="wrap">
+                    <div id="top">
+                        <p id='model'>
+                            <font>型号</font>
+                            <span>4.7英寸</span>
+                            <span>5.5英寸</span>
+                        </p>
+                        <p id='color'>
+                            <font>颜色</font>
+                            <span>银色</span>
+                            <span>金色</span>
+                            <span>深空灰色</span>
+                        </p>
+                        <p id='rom'>
+                            <font>内存</font>
+                            <span>16GB</span>
+                            <span>64GB</span>
+                            <span>128GB</span>
+                        </p>
+                        <p id='banben'>
+                            <font>版本</font>
+                            <span>日版</span>
+                            <span>港版</span>
+                            <span>美版</span>
+                        </p>
+                    </div>
+                    <div id="bottom">
+                        <p>价格： <font>￥ <span id='price'>5288</span>.00</font>
+                        </p>
+                        <button>立即购买</button><span><button>加入购物车</button></span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -360,6 +393,83 @@
         });
     });
     $(".level").change()
+
+
+
+
+
+    var mSpan = document.getElementById('model').getElementsByTagName('span');
+    var cSpan = document.getElementById('color').getElementsByTagName('span');
+    var rSpan = document.getElementById('rom').getElementsByTagName('span');
+    var bSpan = document.getElementById('banben').getElementsByTagName('span');
+    var aSpan = document.getElementsByTagName('span');
+    var oModel = document.getElementById('model');
+    var oRom = document.getElementById('rom');
+    var oBan = document.getElementById('banben')
+    var oPrice = document.getElementById('price');
+
+    mSpan[0].className = 'on';
+    cSpan[0].className = 'on';
+    rSpan[0].className = 'on';
+    bSpan[0].className = 'on';
+
+    for (var i = 0; i < aSpan.length; i++) {
+
+        aSpan[i].onclick = function () {
+            var siblings = this.parentNode.children;
+            for (var j = 0; j < siblings.length; j++) {
+                siblings[j].className = '';
+            }
+            this.className = 'on';
+
+            if (this.parentNode == oModel || this.parentNode == oRom || this.parentNode == oBan) {
+                price();
+            }
+        };
+    };
+
+    function price() {
+        var p1 = 0;
+        var p2 = 0;
+        var p3 = 0;
+        for (var i = 0; i < mSpan.length; i++) {
+            if (mSpan[i].className == 'on') {
+                p1 = i ? 6088 : 5288;
+                break;
+            };
+        };
+        for (var i = 0; i < rSpan.length; i++) {
+            if (rSpan[i].className == 'on') {
+                switch (i) {
+                    case 0:
+                        p2 = 0;
+                        break;
+                    case 1:
+                        p2 = 800;
+                        break;
+                    case 2:
+                        p2 = 1600;
+                        break;
+                }
+            }
+        };
+        for (var i = 0; i < bSpan.length; i++) {
+            if (bSpan[i].className == 'on') {
+                switch (i) {
+                    case 0:
+                        p3 = 600;
+                        break;
+                    case 1:
+                        p3 = 200;
+                        break;
+                    case 2:
+                        p3 = 400;
+                        break;
+                }
+            }
+        };
+        oPrice.innerHTML = p1 + p2 + p3;
+    };
 </script>
 
 </html>
