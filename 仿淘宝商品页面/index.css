@@ -254,8 +254,8 @@ html body .serachBox .sherachb .leftSbox .qrcode .qrright p {
 html body .bodyBox {
   border: 1px solid #e8e8e8;
   height: 660px;
-  padding: 30px;
-  width: 75%;
+  padding: 20px;
+  width: 85%;
   margin: 30px auto;
   position: relative;
 }
@@ -328,7 +328,7 @@ html body .bodyBox .leftBox .level {
 html body .bodyBox .rightBox {
   position: absolute;
   top: 30px;
-  right: 30px;
+  right: 20px;
   width: 65%;
 }
 html body .bodyBox .rightBox .upInfor {
