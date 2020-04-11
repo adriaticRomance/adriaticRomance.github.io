@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        @font-face {
+            font-family: 'iconfont';
+            src: url('fonts/iconfont.eot');
+            src: url('fonts/iconfont.eot?#iefix') format('embedded-opentype'),
+                url('fonts/iconfont.woff2') format('woff2'),
+                url('fonts/iconfont.woff') format('woff'),
+                url('fonts/iconfont.ttf') format('truetype'),
+                url('fonts/iconfont.svg#iconfont') format('svg');
+        }
+
+        .iconfont {
+            font-family: "iconfont" !important;
+            font-size: 16px;
+            font-style: normal;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>仿京东注册页面：</h2>
+    <div class="box">
+        <div class="title">
+            <img src="images/logo.png">
+            <div class="line"></div>
+            <span>欢迎注册</span>
+        </div>
+        <div class="content w">
+            <div class="user"><span>用户名</span><input type="text" placeholder="您的用户名和登录名" style="border: none" id="user"
+                    onfocus="fun1()" onblur="fun2()"><span style="display: none;" class="wroing"
+                    id="wroing">请输入包含字母，数字和下划线的4到16位的用户名</span></div>
+            <div class="setpassword"><span class="sp">设置密码</span><input class="in" type="password" style="border: none"
+                    placeholder="建议至少使用两种字符组合" id="password" onfocus="fun3()" onblur="fun4()"><span
+                    style="display: none;" class="wroing1" id="wroing1">请输入包含字母，数字和下划线的4到16位的密码</span></div>
+            <div class="insure"><span class="sp">确认密码</span><input class="in" type="password" style="border: none;"
+                    placeholder="请再次输入密码" id="passwordinsure" onfocus="fun5()" onblur="fun6()"><span
+                    style="display: none;" class="wroing2" id="wroing2">两次密码不一致,请重新输入</span></div>
+            <div class="nmber"><select name="" id="" class="sel" style="border: none;">
+                    <option value="" selected>中国0086</option>
+                    <option value="">美国0001</option>
+                    <option value="">日本0081</option>
+                </select><span class="line-two"></span><input class="in-iph" type="text" style="border: none"
+                    placeholder="建议使用常用手机" id="number" onfocus="fun7()" onblur="fun8()"><span style="display: none;"
+                    class="wroing3" id="wroing3">请输入正确的号码</span></div>
+            <div class="code"><span class="sp-code">验证码</span><input class="in-code" type="text" style="border: none"
+                    placeholder="请输入验证码" id="checkcode" onfocus="fun9()" onblur="fun10()">
+                <div class="checkcode" id="codeimg">uF6b</div><span style="display: none;" class="wroing4"
+                    id="wroing4">验证码错误，请重新输入</span>
+            </div>
+            <div class="checkbox"><input type="checkbox" id="checkxieyi">阅读并同意<a href="#">《京东用户注册协议》《隐私政策》</a></div>
+            <div class="button"><button onclick="fun11()" id="button">立即注册</button></div>
+        </div>
+        <div class="wo">重新输入后请再次点击文本输入框！</div>
+    </div>
+
+<h2>仿京东商品规格选择：</h2>
+
+    <div class="box2">
+		<div class="up">
+			<div class="Brand">
+				<div>品牌：</div>
+				<div class="butB" name='butB'>惠普</div>
+				<div class="butB" name='butB'>联想</div>
+				<div class="butB" name='butB'>戴尔</div>
+				<div class="butB" name='butB'>三星</div>
+				<div class="butB" name='butB'>宏基</div>
+				<div class="butB" name='butB'>苹果</div>
+				<div class="butB" name='butB'>神舟</div>
+				<div class="butB" name='butB'>华硕</div>
+				<div class="butB" name='butB'>方正</div>
+			</div>
+			<div class="price">
+				<div>价格：</div>
+				<div class="butP" name='butP'>3000-3999</div>
+				<div class="butP" name='butP'>4000-4999</div>
+				<div class="butP" name='butP'>5000-5999</div>
+				<div class="butP" name='butP'>6000-6999</div>
+				<div class="butP" name='butP'>7000-7999</div>
+				<div class="butP" name='butP'>8000-8999</div>
+				<div class="butP" name='butP'>9000-9999</div>
+				<div class="butP" name='butP'>10000以上</div>
+			</div>
+			<div class="size">
+				<div>尺寸：</div>
+				<div class="butS" name='butS'>8.9英寸以及以下</div>
+				<div class="butS" name='butS'>11英寸</div>
+				<div class="butS" name='butS'>12英寸</div>
+				<div class="butS" name='butS'>13英寸</div>
+				<div class="butS" name='butS'>14英寸</div>
+				<div class="butS" name='butS'>15英寸</div>
+				<div class="butS" name='butS'>16英寸</div>
+			</div>
+			<div class="graphicsCard">
+				<div>显卡：</div>
+				<div class="butC" name='butC'>独立显卡</div>
+				<div class="butC" name='butC'>集成显卡</div>
+				<div class="butC" name='butC'>核芯显卡</div>
+			</div>
+		</div>
+		<div class="down" id="down">
+			<div class="select1">已选条件：</div>
+			<div class="select2" style="display: none" id='sel1'>惠普 <button style="border:none;">X</button></div>
+			<div class="select2" style="display: none" id='sel2'>4000-4999 <button style="border:none;">X</button></div>
+			<div class="select2" style="display: none" id='sel3'>11英寸 <button style="border:none;">X</button></div>
+			<div class="select2" style="display: none" id='sel4'>独立显卡 <button style="border:none;">X</button></div>
+		</div>
+	</div>
+</body>
+<script src="index.js"></script>
+
+</html>
