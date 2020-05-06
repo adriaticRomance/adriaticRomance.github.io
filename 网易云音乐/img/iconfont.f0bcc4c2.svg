@@ -1,0 +1,38 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<!--
+2013-9-30: Created.
+-->
+<svg>
+<metadata>
+Created by iconfont
+</metadata>
+<defs>
+
+<font id="iconfont" horiz-adv-x="1024" >
+  <font-face
+    font-family="iconfont"
+    font-weight="500"
+    font-stretch="normal"
+    units-per-em="1024"
+    ascent="896"
+    descent="-128"
+  />
+    <missing-glyph />
+    
+    <glyph glyph-name="xiayiqu" unicode="&#59391;" d="M216.7 51.700000000000045V716.3l445-332.3-445-332.3z m590.6 0h-80V716.3h80v-664.6z"  horiz-adv-x="1024" />
+
+    
+    <glyph glyph-name="shangyiqu" unicode="&#59392;" d="M362.3 384l445 332.3v-664.5L362.3 384zM216.7 716.3h80v-664.5h-80V716.3z"  horiz-adv-x="1024" />
+
+    
+    <glyph glyph-name="zanting" unicode="&#58894;" d="M304 720h80v-672h-80z m408 0h-64c-4.4 0-8-3.6-8-8v-656c0-4.4 3.6-8 8-8h64c4.4 0 8 3.6 8 8V712c0 4.4-3.6 8-8 8z"  horiz-adv-x="1024" />
+
+    
+    <glyph glyph-name="bofang" unicode="&#58887;" d="M748.23 356.34L528 229.53 307.78 102.26c-14.9-8.78-34.52-3.6-43.32 11.74-2.93 4.97-4.07 10.37-4.07 15.8h-0.46V638.42c0 17.58 14.44 31.59 32.05 31.59 6.33 0 12.41-1.81 17.61-5.43L528 538.67 748.23 411.4c15.34-8.57 20.31-28.42 11.51-43.32-2.94-4.97-6.54-8.81-11.51-11.74z m-251.81-71.97l172.4 99.95-172.4 99.52-172.86 99.52v-398.72l172.86 99.73z"  horiz-adv-x="1024" />
+
+    
+
+
+  </font>
+</defs></svg>
