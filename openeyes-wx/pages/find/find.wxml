@@ -1,0 +1,78 @@
+<!-- <topNav></topNav> -->
+<van-nav-bar>
+  <!-- <van-icon name="search" slot="right" /> -->
+  <!-- <van-icon name="calender-o" slot="left" /> -->
+  <van-tabs active="{{ active }}" bind:change="onChange" slot="title" animated="{{true}}" indicator-color="{{pointColor}}" line-height="5px">
+
+    <van-tab title="发现"  title-style="color:white;font-weight: 700;font-size:18px;">
+      <!-- 轮播图层 -->
+      <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <swiper-item wx:for="{{discoveryShowList.data.data.banner.list}}" wx:key="item" class="swiper-item" bindtap="gotoConcent" id="{{discoveryShowList.data.data.banner.list[index].extra_data.app_banner_param}}">
+          <image src="{{item.image}}" class="swiper-image"></image>
+        </swiper-item>
+      </swiper>
+
+      <!-- 今日列表展示层 -->
+      <view class="today" id="today">
+        <view class="boxTitle">
+          {{discoveryShowList.data.data.today.selection_title}}
+        </view>
+        <view class="middle" wx:for="{{discoveryShowList.data.data.today.list}}" wx:key="item" bindtap="gotoConcent" id="{{discoveryShowList.data.data.today.list[index].postid}}">
+          <image src="{{item.image}}"></image>
+          <view class="craadword">
+            <view class="cardnumber">{{item.cates[0].catename}}/{{item.like_num}} <text class="iconfont .icon-like" style="font-size:20px;color:red"></text></view>
+            <view class="cardTitle">{{item.title}}</view>
+          </view>
+        </view>
+      </view>
+
+      <view class="today" id="hot">
+        <view class="boxTitle">
+          {{discoveryShowList.data.data.hot.selection_title}}
+        </view>
+        <view class="middle" wx:for="{{discoveryShowList.data.data.hot.list}}" wx:key="item" bindtap="gotoConcent" id="{{discoveryShowList.data.data.hot.list[index].postid}}">
+          <image src="{{item.image}}"></image>
+          <view class="craadword">
+            <view class="cardnumber">{{item.cates[0].catename}}/{{item.like_num}} <text class="iconfont .icon-like" style="font-size:20px;color:red"></text></view>
+            <view class="cardTitle">{{item.title}}</view>
+          </view>
+        </view>
+      </view>
+
+      <view class="today" id="preview">
+        <view class="boxTitle">
+          {{discoveryShowList.data.data.posts.selection_title}}
+        </view>
+        <view class="middle" wx:for="{{discoveryShowList.data.data.posts.list}}" wx:key="item" bindtap="gotoConcent" id="{{discoveryShowList.data.data.posts.list[index].postid}}">
+          <image src="{{item.image}}"></image>
+          <view class="craadword">
+            <view class="cardnumber" >{{item.cates[0].catename}}/{{item.like_num}} <text class="iconfont .icon-like" style="font-size:20px;color:red"></text></view>
+            <view class="cardTitle">{{item.title}}</view>
+          </view>
+        </view>
+      </view>
+
+
+    </van-tab>
+
+    <van-tab title="频道" class="channd" title-style="color:white;font-weight: 700;font-size:18px;">
+      <van-grid column-num="2" border="{{false}}">
+        <van-grid-item use-slot wx:for="{{cataList}}" wx:key="item" data-cateId="{{item.cateid}}" bindtap="gotoList" class="card">
+          <image style="width:100%" fit="cover" src="{{item.icon}}" />
+          <view class="textTitle">
+            <text>{{item.catename}}</text>
+          </view>
+        </van-grid-item>
+      </van-grid>
+    </van-tab>
+
+    <van-tab title="我的" title-style="color:white;font-weight: 700;font-size:18px;">我的</van-tab>
+
+  </van-tabs>
+</van-nav-bar>
+
+<van-overlay show="{{ show }}" bind:click="onClickHide">
+  <view class="wrapper">
+    <van-loading vertical color="#1989fa">加载中...</van-loading>
+  </view>
+</van-overlay>

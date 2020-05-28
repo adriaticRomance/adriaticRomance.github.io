@@ -1,0 +1,70 @@
+/* pages/concent/concent.wxss */
+
+.scroll-view_H {
+  white-space: nowrap;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  padding: 0px 30px;
+}
+
+.title text {
+  font-weight: 700;
+  font-size: 22px;
+}
+.concent{
+  padding: 0px 20px;
+  font-size: 14px;
+  color: gray;
+  margin: 10px 0px;
+}
+.h3{
+  margin: 10px 0px 5px 15px;
+  font-weight: 700;
+}
+.card {
+  position: relative;
+}
+
+.card .imageWords {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+}
+.card .imageWords view{
+  width: 100%;
+}
+.card .imageWords view text{
+  color: white;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12px;
+}
+
+.info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px auto;
+  padding: 1px;
+}
+
+.scroll-view_H .card {
+  display: inline-block;
+  width: 40%;
+  margin-right: 15px;
+}
+
+.scroll-view_H .card:first-of-type {
+  margin-left: 15px;
+}
+
+.scroll-view_H .card image {
+  width: 100%;
+  height: 100%;
+}

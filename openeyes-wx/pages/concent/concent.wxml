@@ -1,0 +1,18 @@
+<wxs src="../../utils/tools.wxs" module="tools" />
+<video src="https://api.kele8.cn/pic/{{postView.content_video[0].progressive[3].url}}"
+  show-play-btn="{{true}}" controls poster="{{postView.image}}" style="width:100%" object-fit="fill"></video>
+<view class="title"><text>{{postView.title}}</text></view>
+<view class="info"><text>#{{(postView.cate)}} / {{tools.parseTime(postView.duration)}}</text></view>
+<view class="concent">{{postView.intro}}</view>
+<view wx:for="{{postView.relate_video}}">
+  <view class="h3">{{item.name}}</view>
+  <scroll-view class="scroll-view_H" scroll-x="true" >
+    <view wx:for="{{item.list}}" class="card" wx:for-index="idx" wx:for-item="card" catchtap="toggleUrl" id="{{item.list[index].postid}}">
+      <image src="{{card.image}}"  mode="widthFix"></image>
+      <view class="imageWords">
+      <view><text>{{tools.parseTime(card.duration)}}</text></view>
+      <view><text>{{card.title}}</text></view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
