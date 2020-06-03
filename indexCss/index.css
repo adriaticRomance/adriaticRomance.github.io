@@ -95,6 +95,39 @@ html .rightBox .box .boxDown a {
   color: black;
   font-weight: 550;
 }
+.maskConcent{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.maskConcent p{
+
+}
+.switchShow{
+  background: skyblue;
+  z-index: 10;
+  transition: all 1s linear;
+}
+.back{
+  border-radius: 10px;
+  border: 0px;
+  background: pink;
+  padding: 20px;
+  position: absolute;
+  right: 30px;
+  top: 30px;
+}
+.hiddenback{
+  /* z-index: -10; */
+  transition: all 1s;
+  display: none;
+}
 @media (max-width: 1920px) {
   .Icon {
     width: 160px;

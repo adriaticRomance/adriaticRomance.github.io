@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>项目展示</title>
     <link rel="stylesheet" href="indexCss/index.css">
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+    </script>
 </head>
 
 <body>
@@ -15,12 +17,12 @@
             <img src="indexCss/img/Icon.JPG" alt="">
         </div>
         <ul>
-            <li><a href="#" onclick="show()">个人简介</a></li>
-            <li><a href="#" onclick="show()">特长技能</a></li>
-            <li><a href="#" onclick="show()">教育背景</a></li>
-            <li><a href="#" onclick="show()">项目经验</a></li>
-            <li><a href="#" onclick="show()">个人评价</a></li>
-            <li><a href="#" onclick="show()">爱好擅长</a></li>
+            <!-- <li><a href="#" onclick="toggleshow('(+86) 178-1712-9539   1457502707@qq.com   计算机科学与技术专业 ')">个人简介</a></li> -->
+            <!-- <li><a href="#" onclick="toggleshow(data1)">特长技能</a></li> -->
+            <!-- <li><a href="#" onclick="toggleshow(3)">教育背景</a></li> -->
+            <!-- <li><a href="#" onclick="toggleshow(4)">项目经验</a></li> -->
+            <!-- <li><a href="#" onclick="toggleshow(5)">个人评价</a></li> -->
+            <!-- <li><a href="#" onclick="toggleshow(6)">爱好擅长</a></li> -->
         </ul>
     </div>
     <div class="rightBox">
@@ -155,7 +157,7 @@
             </div>
         </div>
 
-        
+
 
         <div class="box">
             <div class="boxUp">
@@ -234,15 +236,31 @@
                 </a>
             </div>
         </div>
-        
+
+        <div class="maskConcent">
+            <p class="concentBox"></p>
+            <button onclick="back()" class="back">返回</button>
+        </div>
     </div>
-    
 </body>
 <script>
-    var show = false;
-    function show(e,concent){
-        e.preventDefault  
+    // var data1 = ''
+    // var data2 = []
+    // var show = false;
 
-    }
+    // function toggleshow(concent) {
+    //     // e.preventDefault  
+    //     // console.log(concent);
+    //     $(".maskConcent").removeClass("switchShow")
+    //     $(".maskConcent").addClass("switchShow")
+    //     $(".concentBox").text(concent)
+    //     $(".back").removeClass("hiddenback")
+    // }
+    // function back(){
+    //     $(".maskConcent").removeClass("switchShow")
+    //     $(".back").addClass("hiddenback")
+        
+    // }
 </script>
+
 </html>
