@@ -4,11 +4,21 @@
 view {
   display: inline;
 }
-
 .channd {
   padding: 0px;
 }
-
+.hotwords{
+  /* width: 100px; */
+  padding: 10px;
+  /* background: skyblue; */
+}
+.wordsBox{
+  float: left;
+  padding: 10px;
+  background: #f7f8fa;
+  margin: 10px;
+  border-radius: 10px;
+}
 .textTitle {
   position: absolute;
   top: 45%;

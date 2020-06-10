@@ -1,5 +1,26 @@
 // pages/find/index.js
 Page({
+  onChange(e) {
+    this.setData({
+      value: e.detail,
+    });
+  },
+  gethotwords(){
+    wx.request({
+      url: 'https://api.kele8.cn/agent/https://app.vmovier.com/apiv3/search?kw=',
+      success:(res)=>{
+        this.setData({
+          hotSerach: res.data.data.recommend_keywords
+        })
+      }
+    })
+  },
+  onSearch() {
+    console.log('搜索' + this.data.value);
+  },
+  onClick() {
+    console.log('搜索' + this.data.value);
+  },
   onClickLeft() {
     // wx.showToast({
     //   title: '点击返回',
@@ -111,7 +132,9 @@ Page({
     autoplay: true,
     interval: 3000,
     duration: 500,
-    cradlist: []
+    cradlist: [],
+    hotSerach:[],
+    value: '',
   },
   onChange(event) {
     // wx.showToast({
@@ -150,6 +173,7 @@ Page({
     this.getShow()
     this.getcardLIst()
     this.tranlationTime(208)
+    this.gethotwords()
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
