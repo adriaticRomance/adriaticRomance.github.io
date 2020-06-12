@@ -2,7 +2,7 @@
 Page({
   onChange(e) {
     this.setData({
-      value: e.detail,
+      serachInput: e.detail,
     });
   },
   gethotwords(){
@@ -15,11 +15,49 @@ Page({
       }
     })
   },
-  onSearch() {
-    console.log('搜索' + this.data.value);
+  setsearchWords(e){
+    console.log(e.currentTarget.id)
+    this.setData({
+      searchInput: e.currentTarget.id
+    })
+    this.goSearch(e.currentTarget.id)
+    this.setData({
+      wordsShow: false
+    })
+  },
+  goSearch(v) {
+    wx.request({
+      url: 'https://api.kele8.cn/agent/https://app.vmovier.com/apiv3/search?kw='+v,
+      success:(res)=>{
+        this.setData({
+          searchAnswer:res.data.data.result.list
+        })
+      }
+    })
+  },
+  showsearch(e){
+    console.log(e.currentTarget.id)
+    wx.navigateTo({
+      url: '../concent/concent?postid=' + e.currentTarget.id,
+    })
+  },
+  onSearch(e) {
+    // console.log('搜索' + this.data.serachInput);
+    console.log(e.detail)
+    this.goSearch(e.detail)
+    this.setData({
+      wordsShow:false
+    })
   },
   onClick() {
-    console.log('搜索' + this.data.value);
+    // console.log(e.detail)
+    // this.goSearch(e.detail)
+    // console.log('搜索' + this.data.serachInput);
+    this.setData({
+      searchAnswer:[],
+      wordsShow:true
+    })
+
   },
   onClickLeft() {
     // wx.showToast({
@@ -134,7 +172,9 @@ Page({
     duration: 500,
     cradlist: [],
     hotSerach:[],
-    value: '',
+    searchAnswer: [],
+    wordsShow:true,
+    searchInput:''
   },
   onChange(event) {
     // wx.showToast({

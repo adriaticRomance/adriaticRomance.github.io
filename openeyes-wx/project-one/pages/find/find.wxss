@@ -1,24 +1,45 @@
 .van-tabs .van-tabs__scroll {
   background: black;
 }
+
 view {
   display: inline;
 }
+
+.hotwords {
+  width: 100%;
+}
+
+.answer {
+  display: block;
+  padding: 10px;
+  background: #f7f8fa;
+  margin: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: start;
+}
+
 .channd {
   padding: 0px;
 }
-.hotwords{
+
+.hotwords {
   /* width: 100px; */
   padding: 10px;
   /* background: skyblue; */
 }
-.wordsBox{
+
+.wordsBox {
   float: left;
   padding: 10px;
   background: #f7f8fa;
   margin: 10px;
   border-radius: 10px;
 }
+
 .textTitle {
   position: absolute;
   top: 45%;
@@ -52,63 +73,74 @@ swiper {
 .swiper-image {
   width: 100%;
 }
- .today{
-   width: 100%;
-   display: flex;
-   justify-content: center;
-   flex-wrap: wrap;
 
- }
- .boxTitle{
-   display: inline-block;
-   width: 100%;
-   padding: 10px;
- }
- .middle{
-   position: relative;
-   width: 100%;
-   height: 240px;
- }
- .middle image{
-   width: 100%;
-   height: 100%;
- }
- .middle .craadword{
-   position: absolute;
-   bottom: 30px;
-   left: 30px;
-   color: white;
-   font-size: 18px;
-   width: 300px;
+.today {
+  width: 100%;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
- }
- .cardnumber{
-   width: 100%;
-   text-align: left;
- }
- .cardTitle{
-   width: 100%;
- }
- .bottom{
-   width: 100%;
- }
-  .bottom ul{
-    width: 100%;
-   display: flex;
-   flex-wrap: wrap; 
-  }
- .bottom ul li{
-   flex: 1;
- } 
- .bottom ul li view{
-   width: 50%;
-   height: 100%;
-   position: relative;
- }
- .bottom ul li view .littleTitle{
-   position: absolute;
-   top: 10px;
-   left: 10px;
- }
+}
+
+.boxTitle {
+  display: inline-block;
+  width: 100%;
+  padding: 10px;
+}
+
+.middle {
+  position: relative;
+  width: 100%;
+  height: 240px;
+}
+
+.middle image {
+  width: 100%;
+  height: 100%;
+}
+
+.middle .craadword {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  color: white;
+  font-size: 18px;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cardnumber {
+  width: 100%;
+  text-align: left;
+}
+
+.cardTitle {
+  width: 100%;
+}
+
+.bottom {
+  width: 100%;
+}
+
+.bottom ul {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.bottom ul li {
+  flex: 1;
+}
+
+.bottom ul li view {
+  width: 50%;
+  height: 100%;
+  position: relative;
+}
+
+.bottom ul li view .littleTitle {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
